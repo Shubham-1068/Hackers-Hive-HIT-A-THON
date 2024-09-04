@@ -12,3 +12,5 @@ secure funding.
 network with peers, mentors, and industry experts. Facilitates knowledge 
 sharing, collaboration, and relationship-building within the community to 
 enhance business visibility and support
+
+- Link to our presentation: [HIT_A_THON PPT.pdf](https://github.com/user-attachments/files/16873995/HIT_A_THON.PPT.pdf)
