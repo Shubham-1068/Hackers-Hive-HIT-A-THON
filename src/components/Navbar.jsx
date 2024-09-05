@@ -7,7 +7,7 @@ function Navbar() {
     <>
       <div className="h-20 w-screen fixed top-2 z-10">
         <div className="h-full w-full flex items-center justify-between">
-          <Link to="/" className="h-14 ml-4 mt-1">
+          <Link to="/feeds" className="h-14 ml-4 mt-1">
            <img src={Logo} alt="logo" className="h-14 ml-4" />
           </Link>
 
@@ -26,7 +26,7 @@ function Navbar() {
             />
 
             <button className=" rounded-full px-3 py-2 mr-10 bg-[#67da20] text-black font-semibold">
-              Sign-out
+              <Link to="/">Sign-out</Link>
             </button>
           </div>
         </div>

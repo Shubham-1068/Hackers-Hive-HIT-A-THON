@@ -11,7 +11,7 @@ function SideNav() {
             <ul className="w-full h-full flex flex-col items-center justify-around">
               <li className="font-bold rounded-md h-12 w-[80%] flex items-center justify-center text-[17px] bg-[#67da20] cursor-pointer">
                 <Link
-                  to="/"
+                  to="/feeds"
                   className="flex items-center justify-center h-full w-full"
                 >
                   <img

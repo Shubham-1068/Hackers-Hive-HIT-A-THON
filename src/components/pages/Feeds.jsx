@@ -5,43 +5,74 @@ function Feeds() {
   const [posts, setPosts] = useState([
     {
       id: 1,
-      content: "Hello world",
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Amul",
+      content:
+        "Amul is a multinational cooperative society owned by an astounding 3.6 million milk producers in Gujarat.",
+      location: "Gujarat, India",
     },
     {
       id: 2,
-      content: "Hello world",
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Jindal",
+      content: "JSPL is an Indian steel company headquartered in New Delhi.",
+      location: "New Delhi, India",
     },
     {
       id: 3,
-      content: "Hello world",
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
     },
     {
       id: 4,
-      content: "Hello world",
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
     },
     {
       id: 5,
-      content: "Hello world",
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
     },
     {
       id: 6,
-      content: "Hello world",
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
     },
     {
       id: 7,
-      content: "Hello world",
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
     },
     {
       id: 8,
-      content: "Hello world",
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
     },
     {
       id: 9,
-      content: "Hello world",
-    },
-    {
-      id: 10,
-      content: "Hello world",
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
     },
   ]);
 
@@ -54,33 +85,34 @@ function Feeds() {
               return (
                 <div
                   key={post.id}
-                  className="h-[30%] w-[40%] rounded-md flex justify-between items-center bg-[#3B3B3B] shadow-md shadow-black text-white p-2 border-2 border-gray-500"
+                  className="h-[30%] w-[40%] rounded-md flex justify-between items-center bg-[#3B3B3B] shadow-md shadow-black text-white p-2 border-2 border-gray-500 cursor-pointer"
                 >
                   <div className="h-full w-[30%] flex justify-center items-center">
                     <img
-                      src="https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg"
-                      alt="profiles"
+                      src={post.logo}
+                      alt="logo"
                       className="h-[90%] rounded-lg"
                     />
                   </div>
-                  
-                  <div className="h-full w-[70%] pl-5 flex flex-col gap-3 relative">
-                      {/* {post.content} */}
-                      <p className="text-2xl font-semibold">Jindal & Jindal</p>
-                      <p className="h-[19%] w-full text-md">
-                        <ul className="h-full w-full flex gap-2 items-center flex-wrap text-black">
-                          <li className="bg-[#67da20] rounded-md px-2">Textile</li>
-                          {/* <li className="bg-[#67da20] rounded-md px-2">Textile</li>
-                          <li className="bg-[#67da20] rounded-md px-2">Textile</li>
-                          <li className="bg-[#67da20] rounded-md px-2">Textile</li> */}
-                        </ul>
-                      </p>
-                      <p className="absolute bottom-0">
-                        <p className="mb-2 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi repellendus corrupti ad aperiam</p>
-                        <p className="text-green-500">Location: Bihar</p>
-                      </p>
-                  </div>
 
+                  <div className="h-full w-[70%] pl-5 flex flex-col gap-3 relative">
+                    <p className="text-2xl font-semibold ">{post.name}</p>
+                    <p className="h-[19%] w-full text-md absolute mt-[32px]">
+                      <ul className="h-full w-full flex gap-2 items-center flex-wrap text-black">
+                        <li className="bg-[#67da20] rounded-md px-2">Milk</li>
+                        <li className="bg-[#67da20] rounded-md px-2">Supply</li>
+                        <li className="bg-[#67da20] rounded-md px-2">
+                          Transport
+                        </li>
+                      </ul>
+                    </p>
+                    <p className="text-sm absolute top-[65px]">{post.content}</p>
+                    <p className="absolute bottom-0">
+                      <p className="text-green-500">
+                        Location: {post.location}
+                      </p>
+                    </p>
+                  </div>
                 </div>
               );
             })}

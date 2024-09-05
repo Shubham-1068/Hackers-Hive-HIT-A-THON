@@ -6,6 +6,7 @@ import Feeds from "./components/pages/Feeds";
 import Community from "./components/pages/Community";
 import Finance from "./components/pages/Finance";
 import About from "./components/pages/About";
+import Login from "./components/pages/Login";
 
 function App() {
   const router = createBrowserRouter([
@@ -14,9 +15,7 @@ function App() {
       element: (
         <>
           <div className="w-screen h-screen bg-[#1e1e1e]">
-            <Navbar />
-            <SideNav />
-            <Feeds />
+            <Login />
           </div>
         </>
       ),
@@ -53,6 +52,18 @@ function App() {
             <Navbar />
             <SideNav />
             <About />
+          </div>
+        </>
+      ),
+    },
+    {
+      path: "/feeds",
+      element: (
+        <>
+          <div className="w-screen h-screen bg-[#1e1e1e]">
+            <Navbar />
+            <SideNav />
+            <Feeds />
           </div>
         </>
       ),

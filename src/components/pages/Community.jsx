@@ -9,7 +9,7 @@ export default function Community() {
         <div className="w-full h-full flex">
           {/* left section with search bar */}
           <div className="w-[25%] h-full bg-[#FAFAFA] border-r-[1px] border-gray-400">
-            <div className="h-[60px] bg-[#163300] px-2 py-3 flex items-center justify-around relative">
+            <div className="h-[60px] bg-[#1e1e1e] px-2 py-3 flex items-center justify-around relative">
               <input
                 type="text"
                 className="h-9 w-[95%] rounded-full outline-none text-left px-4 py-1"
