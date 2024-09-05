@@ -1,5 +1,5 @@
 import React from "react";
-import ChatSidebarItem from "./ChatsidebarItem";
+import ChatSidebarItem from "./ChatSidebarItem";
 import ChatMessage from "./ChatMessage";
 
 export default function Community() {
