@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom scrollbar for webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 4px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #696969; /* Scrollbar thumb (the draggable part) */
+    border-radius: 10px; /* Optional: Make the thumb rounded */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #343434; /* Change color when hovering */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #ffff; /* Scrollbar track (background of the scrollbar) */
+  }
+  
