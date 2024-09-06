@@ -74,18 +74,42 @@ function Feeds() {
         "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
       location: "Mumbai, India",
     },
+    {
+      id: 9,
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
+    },
+    {
+      id: 9,
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
+    },
+    {
+      id: 9,
+      logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
+      name: "Tata",
+      content:
+        "The Tata Group is India’s largest conglomerate, with a presence in over 150 countries and operations spanning 100 countries.",
+      location: "Mumbai, India",
+    },
   ]);
 
   return (
     <>
       <div className="h-screen w-[85%] flex flex-col justify-end fixed right-0 bottom-0">
-        <div className="border-t-2  border-gray-500 h-[87%] w-full flex items-center justify-center">
+        <div className="border-t-[1px]  border-gray-500 h-[87%] w-full flex items-center justify-center">
           <div className="mt-10 h-[95%] w-[98%] flex justify-center items-center flex-wrap gap-[7%] overflow-auto scroll">
             {posts.map((post) => {
               return (
                 <div
                   key={post.id}
-                  className="h-[30%] w-[40%] rounded-md flex justify-between items-center bg-[#3B3B3B] shadow-md shadow-black text-white p-2 border-2 border-gray-500 cursor-pointer"
+                  className="h-[30%] w-[40%] rounded-md flex justify-between items-center bg-[#e1e1e146]  border-[1px] text-black p-2 border-1 border-gray-400 cursor-pointer"
                 >
                   <div className="h-full w-[30%] flex justify-center items-center">
                     <img
@@ -108,7 +132,7 @@ function Feeds() {
                     </p>
                     <p className="text-sm absolute top-[65px]">{post.content}</p>
                     <p className="absolute bottom-0">
-                      <p className="text-green-500">
+                      <p className="text-green-800">
                         Location: {post.location}
                       </p>
                     </p>

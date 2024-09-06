@@ -6,7 +6,7 @@ function SideNav() {
   return (
     <>
       <div className="h-[87%] w-[15%] flex flex-col justify-end fixed left-0 bottom-0">
-        <div className="border-t-2 border-gray-500 h-full w-full flex flex-col justify-around bg-[#3b3b3b] relative">
+        <div className="border-t-[1px] border-r-[1px]  h-full w-full flex flex-col justify-around bg-gray-200 relative">
           <div className="h-96 w-full flex flex-col items-end absolute top-0 mt-8">
             <ul className="w-full h-full flex flex-col items-center justify-around">
               <li className="font-bold rounded-md h-12 w-[80%] flex items-center justify-center text-[17px] bg-[#67da20] cursor-pointer">
@@ -22,7 +22,7 @@ function SideNav() {
                   Home
                 </Link>
               </li>
-              <li className="font-bold rounded-md h-12 w-[80%] flex items-center justify-center text-[17px] bg-[#202124] cursor-pointer text-white">
+              <li className="font-bold rounded-md h-12 w-[80%] flex items-center justify-center text-[17px] bg-[#1e1e1e] cursor-pointer text-white">
                 <Link
                   to="/finance"
                   className="flex items-center justify-center h-full w-full"
@@ -35,7 +35,7 @@ function SideNav() {
                   Finance
                 </Link>
               </li>
-              <li className="font-bold rounded-md h-12 w-[80%] flex items-center justify-center text-[17px] bg-[#202124] cursor-pointer text-white">
+              <li className="font-bold rounded-md h-12 w-[80%] flex items-center justify-center text-[17px] bg-[#1e1e1e] cursor-pointer text-white">
                 <Link
                   to="/community"
                   className="flex items-center justify-center h-full w-full"
@@ -48,7 +48,7 @@ function SideNav() {
                   Community
                 </Link>
               </li>
-              <li className="font-bold rounded-md h-12 w-[80%] flex items-center justify-center text-[17px] bg-[#202124] cursor-pointer text-white">
+              <li className="font-bold rounded-md h-12 w-[80%] flex items-center justify-center text-[17px] bg-[#1e1e1e] cursor-pointer text-white">
                 <Link
                   to="/about"
                   className="flex items-center justify-center h-full w-full"
@@ -72,7 +72,7 @@ function SideNav() {
             <div className="h-full w-full flex items-center justify-center">
               <img src={Github} alt="profile" className="h-8" />
 
-              <p className="h-full w-full text-white flex items-center justify-center italic font-semibold">
+              <p className="h-full w-full text-white hover:text-[#67da20] flex items-center justify-center italic font-semibold">
                 #Hackers-Hive
               </p>
             </div>
