@@ -8,7 +8,7 @@ function Navbar() {
       <div className="h-20 w-screen fixed  z-10 bg-[#1e1e1ef5]">
         <div className="h-full w-full flex items-center justify-between">
           <Link to="/feeds" className="h-14 ml-4 mt-1">
-           <img src={Logo} alt="logo" className="h-14 ml-4" />
+            <img src={Logo} alt="logo" className="h-14 ml-4" />
           </Link>
 
           <div className="mr-2 h-12 w-[450px] flex justify-center items-center gap-4 rounded-full bg-[#3b3b3b]" >
@@ -17,6 +17,56 @@ function Navbar() {
               <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNlYXJjaCI+PGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iOCIvPjxwYXRoIGQ9Im0yMSAyMS00LjMtNC4zIi8+PC9zdmc+" alt="search" className="h-5 mb-[1px]" />
             </button>
           </div>
+
+
+          {/* navigation */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
+              <Link to="/feeds" className="flex items-center flex-col gap-1">
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMmMyYzIiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ob3VzZSI+PHBhdGggZD0iTTE1IDIxdi04YTEgMSAwIDAgMC0xLTFoLTRhMSAxIDAgMCAwLTEgMXY4Ii8+PHBhdGggZD0iTTMgMTBhMiAyIDAgMCAxIC43MDktMS41MjhsNy01Ljk5OWEyIDIgMCAwIDEgMi41ODIgMGw3IDUuOTk5QTIgMiAwIDAgMSAyMSAxMHY5YTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yeiIvPjwvc3ZnPg=="
+                  alt="Home"
+                  className="h-7"
+                />
+                <p className="text-white text-xs">Home</p>
+              </Link>
+
+            </div>
+
+            <div className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
+              <Link to="/finance" className="flex items-center flex-col gap-1">
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMmMyYzIiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1iYWRnZS1pbmRpYW4tcnVwZWUiPjxwYXRoIGQ9Ik0zLjg1IDguNjJhNCA0IDAgMCAxIDQuNzgtNC43NyA0IDQgMCAwIDEgNi43NCAwIDQgNCAwIDAgMSA0Ljc4IDQuNzggNCA0IDAgMCAxIDAgNi43NCA0IDQgMCAwIDEtNC43NyA0Ljc4IDQgNCAwIDAgMS02Ljc1IDAgNCA0IDAgMCAxLTQuNzgtNC43NyA0IDQgMCAwIDEgMC02Ljc2WiIvPjxwYXRoIGQ9Ik04IDhoOCIvPjxwYXRoIGQ9Ik04IDEyaDgiLz48cGF0aCBkPSJtMTMgMTctNS0xaDFhNCA0IDAgMCAwIDAtOCIvPjwvc3ZnPg=="
+                  alt="Home"
+                  className="h-7"
+                />
+                <p className="text-white text-xs">Finance</p>
+              </Link>
+            </div>
+
+            <div className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
+              <Link to="/community" className="flex items-center flex-col gap-1">
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMmMyYzIiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tZXNzYWdlLWNpcmNsZS1tb3JlIj48cGF0aCBkPSJNNy45IDIwQTkgOSAwIDEgMCA0IDE2LjFMMiAyMloiLz48cGF0aCBkPSJNOCAxMmguMDEiLz48cGF0aCBkPSJNMTIgMTJoLjAxIi8+PHBhdGggZD0iTTE2IDEyaC4wMSIvPjwvc3ZnPg=="
+                  alt="Home"
+                  className="h-7"
+                />
+                <p className="text-white text-xs">Community</p>
+              </Link>
+            </div>
+
+            <div className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
+              <Link to="/about" className="flex items-center flex-col gap-1">
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMmMyYzIiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1pbmZvIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xMiAxNnYtNCIvPjxwYXRoIGQ9Ik0xMiA4aC4wMSIvPjwvc3ZnPg=="
+                  alt="Home"
+                  className="h-7"
+                />
+                <p className="text-white text-xs">About</p>
+              </Link>
+            </div>
+          </div>
+
 
           <div className="flex items-center gap-8">
             <img

@@ -5,7 +5,7 @@ import ChatMessage from "./ChatMessage";
 export default function Community() {
   return (
     <>
-      <div className="h-[87%] w-[85%] flex flex-col justify-end fixed right-0 bottom-0 border-t-[1px] border-gray-500">
+      <div className="h-[90%] mt-16 w-full flex flex-col justify-end fixed right-0 bottom-0 border-t-[1px] border-gray-500">
         <div className="w-full h-full flex">
 
           {/* left section with search bar */}
@@ -151,23 +151,25 @@ export default function Community() {
                 </div>
               </div>
 
-              <svg
-                className="hover:bg-gray-300 cursor-pointer rounded-lg"
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="36"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#474747"
-                stroke-width="2.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-ellipsis-vertical"
-              >
-                <circle cx="12" cy="12" r="1" />
-                <circle cx="12" cy="5" r="1" />
-                <circle cx="12" cy="19" r="1" />
-              </svg>
+              <div className="hover:bg-gray-300 cursor-pointer rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#474747"
+                  stroke-width="2.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-ellipsis-vertical"
+                >
+                  <circle cx="12" cy="12" r="1" />
+                  <circle cx="12" cy="5" r="1" />
+                  <circle cx="12" cy="19" r="1" />
+                </svg>
+              </div>
+
             </div>
 
             {/* chat messages */}
@@ -200,7 +202,7 @@ export default function Community() {
                   </svg>
                 </div>
 
-                <div>
+                <div className="hover:bg-[#9fe870] p-2 rounded-lg">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
@@ -219,7 +221,7 @@ export default function Community() {
               </div>
 
               <input
-                className="w-[45vw] h-[40px] border-2 border-gray-00 rounded-lg text-slate-800 overflow-y-hidden p-4"
+                className="w-[55vw] h-[40px] border-2 border-gray-00 rounded-lg text-slate-800 overflow-y-hidden p-4"
                 placeholder="Type a message"
               ></input>
 
