@@ -111,7 +111,7 @@ function SideNav() {
             </div>
           </div>
 
-          <div className="w-full h-[30%] rounded-md bg-white pt-18"> 
+          <div className="w-full h-[30%] rounded-md bg-white pt-18 cursor-pointer"> 
             <AdSection ads={adImagesArray} />
           </div>
 
