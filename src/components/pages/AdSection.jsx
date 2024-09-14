@@ -13,7 +13,7 @@ const AdSection = ({ ads }) => {
   }, [ads.length]);
 
   return (
-    <div className="w-[15vw] mt-4 m-5 h-[22%] fixed bottom-0 rounded-lg bg-slate-400 shadow-sm shadow-gray-900">
+    <div className="w-[15vw] mt-4 m-5 h-[20%] fixed bottom-0 rounded-lg bg-slate-400 shadow-sm shadow-gray-900">
       <img
         src={ads[currentAdIndex]}
         alt="ads"
