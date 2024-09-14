@@ -5,7 +5,7 @@ import ChatMessage from "./ChatMessage";
 export default function Community() {
   return (
     <>
-      <div className="h-[90%] mt-16 w-full flex flex-col justify-end fixed right-0 bottom-0 border-t-[1px] border-gray-500">
+      <div className="h-[89%] mt-16 w-full flex flex-col justify-end fixed right-0 bottom-0 border-t-[1px] border-gray-500">
         <div className="w-full h-full flex">
 
           {/* left section with search bar */}

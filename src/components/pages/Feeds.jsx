@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import PopInfo from "./PopInfo";
 import { Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
 
 function Feeds() {
   const [posts, setPosts] = useState([
@@ -214,10 +215,12 @@ function Feeds() {
     <>
       <div className="h-screen w-[82%] flex flex-col justify-end fixed right-0 bottom-0">
         <div className=" h-[83%] w-full flex items-center justify-center">
-          <div className="-mt-5 pb-3 h-[95%] w-[98%] flex justify-center items-center flex-wrap gap-[7%] overflow-auto scroll">
+          <div className="-mt-10 pt-4 pb-3 h-[95%] w-[98%] flex justify-center items-center flex-wrap gap-[7%] overflow-auto scroll relative z-20">
             {posts.map((post) => {
               return (
-                <div
+                <motion.div
+                  initial={{ opacity: 1, scale: 1 }}
+                  whileHover={{ opacity: 1, scale: 1.07 }}
                   key={post.id}
                   className="h-[30%] w-[40%] rounded-md flex justify-between items-center bg-[#e1e1e146]  border-[1px] text-black p-2  border-1 border-gray-300 cursor-pointer"
                  onClick={() => {setvisible(!visible); setcurrpost(post);}}>
@@ -249,7 +252,7 @@ function Feeds() {
                   </div>
 
 
-                </div>
+                </motion.div>
               );
             })}
             <PopInfo visible={visible} setvisible={setvisible} currpost={currpost} />
