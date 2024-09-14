@@ -7,6 +7,7 @@ import Community from "./components/pages/Community";
 import Finance from "./components/pages/Finance";
 import About from "./components/pages/About";
 import Login from "./components/pages/Login";
+import NotFound from "./components/pages/NotFound";
 
 function App() {
   const router = createBrowserRouter([
@@ -64,6 +65,17 @@ function App() {
             <Navbar />
             <SideNav />
             <Feeds />
+          </div>
+        </>
+      ),
+    },
+    {
+      path: "/*",
+      element: (
+        <>
+          <div className="w-screen h-screen bg-[#ffff]">
+            <Navbar />
+            <NotFound />
           </div>
         </>
       ),
