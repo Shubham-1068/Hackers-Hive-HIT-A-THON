@@ -5,14 +5,16 @@ import ChatMessage from "./ChatMessage";
 export default function Community() {
   return (
     <>
-      <div className="h-[87%] w-[85%] flex flex-col justify-end fixed right-0 bottom-0 border-t-2 border-gray-500">
+      <div className="h-[90%] mt-16 w-full flex flex-col justify-end fixed right-0 bottom-0 border-t-[1px] border-gray-500">
         <div className="w-full h-full flex">
+
           {/* left section with search bar */}
-          <div className="w-[25%] h-full bg-[#FAFAFA] border-r-[1px] border-gray-400">
-            <div className="h-[60px] bg-[#1e1e1e] px-2 py-3 flex items-center justify-around relative">
+          <div className="w-[25%] h-full bg-[#3b3b3b]">
+            <div className="h-[60px] bg-[#333333] px-2 py-3 flex items-center justify-around relative border-black border-b-[1px]">
               <input
                 type="text"
                 className="h-9 w-[95%] rounded-full outline-none text-left px-4 py-1"
+                placeholder="Search"
               />
               <button className="h-7 w-7 rounded-full flex justify-center items-center absolute right-6 bg-gray-300">
                 <img
@@ -23,7 +25,7 @@ export default function Community() {
               </button>
             </div>
 
-            <div className="w-full h-full overflow-y-scroll ">
+            <div className="w-full h-full overflow-y-scroll text-white">
               <ChatSidebarItem
                 displayName="Ritika"
                 message="Hello, what is your bussiness?"
@@ -39,7 +41,7 @@ export default function Community() {
                 message="Ok, done"
                 displayPicture="./src/assets/undraw_profile_pic.png"
               />
-              <div className="bg-gray-200 border-r-[10px] rounded-md border-[#67da20]">
+              <div className="bg-[#1e1e1e] border-r-[10px] rounded-md border-[#67da20] hover:border-none">
                 <ChatSidebarItem
                   displayName="Rajveer"
                   message="It's good to be here"
@@ -123,7 +125,7 @@ export default function Community() {
                 <img
                   src="./src/assets/undraw_pic_profile.png"
                   alt="profile_pic"
-                  className="w-[50px] h-[50px] rounded-full"
+                  className="w-[50px] h-[50px] rounded-full bg-gray-300"
                 />
                 <div>
                   <div className="ml-2 text-[#163300] text-xl font-bold">
@@ -149,22 +151,25 @@ export default function Community() {
                 </div>
               </div>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#474747"
-                stroke-width="2.25"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-ellipsis-vertical"
-              >
-                <circle cx="12" cy="12" r="1" />
-                <circle cx="12" cy="5" r="1" />
-                <circle cx="12" cy="19" r="1" />
-              </svg>
+              <div className="hover:bg-gray-300 cursor-pointer rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#474747"
+                  stroke-width="2.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-ellipsis-vertical"
+                >
+                  <circle cx="12" cy="12" r="1" />
+                  <circle cx="12" cy="5" r="1" />
+                  <circle cx="12" cy="19" r="1" />
+                </svg>
+              </div>
+
             </div>
 
             {/* chat messages */}
@@ -173,7 +178,7 @@ export default function Community() {
             </div>
 
             {/* chat box */}
-            <div className="h-[70px] w-full bg-gray-200 text-[#f2f2f2] fixed bottom-0 p-2 flex items-center">
+            <div className="h-16 w-screen bg-gray-300 text-[#f2f2f2] fixed bottom-0 p-2 flex items-center">
               <div className="flex gap-2 pr-4 items-center ml-4">
                 <div className="hover:bg-[#9fe870] p-2 rounded-lg">
                   <svg
@@ -216,12 +221,12 @@ export default function Community() {
               </div>
 
               <input
-                className="w-[45vw] h-[40px] border-2 border-gray-500 rounded-lg text-slate-800 overflow-y-hidden p-4"
+                className="w-[55vw] h-[40px] border-2 border-gray-00 rounded-lg text-slate-800 overflow-y-hidden p-4"
                 placeholder="Type a message"
               ></input>
 
-              <button className="w-[5%] h-10 border-2 border-[#67da20] ml-6 hover:bg-slate-300 p-2 rounded-lg text-xl items-center flex justify-center font-semibold text-[#163300]">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2N2RhMjAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZW5kLWhvcml6b250YWwiPjxwYXRoIGQ9Ik0zLjcxNCAzLjA0OGEuNDk4LjQ5OCAwIDAgMC0uNjgzLjYyN2wyLjg0MyA3LjYyN2EyIDIgMCAwIDEgMCAxLjM5NmwtMi44NDIgNy42MjdhLjQ5OC40OTggMCAwIDAgLjY4Mi42MjdsMTgtOC41YS41LjUgMCAwIDAgMC0uOTA0eiIvPjxwYXRoIGQ9Ik02IDEyaDE2Ii8+PC9zdmc+" alt="send" />
+              <button className="w-[5%] h-10 bg-[#67e11f] ml-6 hover:bg-[#4b9023] p-2 rounded-lg text-xl items-center flex justify-center font-semibold text-[#163300]">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZW5kLWhvcml6b250YWwiPjxwYXRoIGQ9Ik0zLjcxNCAzLjA0OGEuNDk4LjQ5OCAwIDAgMC0uNjgzLjYyN2wyLjg0MyA3LjYyN2EyIDIgMCAwIDEgMCAxLjM5NmwtMi44NDIgNy42MjdhLjQ5OC40OTggMCAwIDAgLjY4Mi42MjdsMTgtOC41YS41LjUgMCAwIDAgMC0uOTA0eiIvPjxwYXRoIGQ9Ik02IDEyaDE2Ii8+PC9zdmc+" alt="send" />
               </button>
             </div>
           </div>

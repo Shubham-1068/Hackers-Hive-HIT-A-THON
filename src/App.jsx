@@ -14,7 +14,7 @@ function App() {
       path: "/",
       element: (
         <>
-          <div className="w-screen h-screen bg-[#1e1e1e]">
+          <div className="w-screen h-screen bg-[#ffff]">
             <Login />
           </div>
         </>
@@ -24,9 +24,9 @@ function App() {
       path: "/community",
       element: (
         <>
-          <div className="w-screen h-screen bg-[#1e1e1e]">
+          <div className="w-screen h-screen bg-[#ffff]">
             <Navbar />
-            <SideNav />
+            {/* <SideNav /> */}
             <Community />
           </div>
         </>
@@ -36,7 +36,7 @@ function App() {
       path: "/finance",
       element: (
         <>
-          <div className="w-screen h-screen bg-[#1e1e1e]">
+          <div className="w-screen h-screen bg-[#ffff]">
             <Navbar />
             <SideNav />
             <Finance />
@@ -48,9 +48,9 @@ function App() {
       path: "/about",
       element: (
         <>
-          <div className="w-screen h-screen bg-[#1e1e1e]">
+          <div className="w-screen h-screen bg-[#ffff]">
             <Navbar />
-            <SideNav />
+            {/* <SideNav /> */}
             <About />
           </div>
         </>
@@ -60,7 +60,7 @@ function App() {
       path: "/feeds",
       element: (
         <>
-          <div className="w-screen h-screen bg-[#1e1e1e]">
+          <div className="w-screen h-screen bg-[#ffff]">
             <Navbar />
             <SideNav />
             <Feeds />
