@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Navbar() {
   return (
@@ -21,7 +22,7 @@ function Navbar() {
 
           {/* navigation */}
           <div className="flex items-center gap-4">
-            <div className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
+            <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.05 }} className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
               <Link to="/feeds" className="flex items-center flex-col gap-1">
                 <img
                   src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMmMyYzIiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ob3VzZSI+PHBhdGggZD0iTTE1IDIxdi04YTEgMSAwIDAgMC0xLTFoLTRhMSAxIDAgMCAwLTEgMXY4Ii8+PHBhdGggZD0iTTMgMTBhMiAyIDAgMCAxIC43MDktMS41MjhsNy01Ljk5OWEyIDIgMCAwIDEgMi41ODIgMGw3IDUuOTk5QTIgMiAwIDAgMSAyMSAxMHY5YTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yeiIvPjwvc3ZnPg=="
@@ -31,9 +32,9 @@ function Navbar() {
                 <p className="text-white text-xs">Home</p>
               </Link>
 
-            </div>
+            </motion.div>
 
-            <div className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
+            <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.05 }} className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
               <Link to="/finance" className="flex items-center flex-col gap-1">
                 <img
                   src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMmMyYzIiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1iYWRnZS1pbmRpYW4tcnVwZWUiPjxwYXRoIGQ9Ik0zLjg1IDguNjJhNCA0IDAgMCAxIDQuNzgtNC43NyA0IDQgMCAwIDEgNi43NCAwIDQgNCAwIDAgMSA0Ljc4IDQuNzggNCA0IDAgMCAxIDAgNi43NCA0IDQgMCAwIDEtNC43NyA0Ljc4IDQgNCAwIDAgMS02Ljc1IDAgNCA0IDAgMCAxLTQuNzgtNC43NyA0IDQgMCAwIDEgMC02Ljc2WiIvPjxwYXRoIGQ9Ik04IDhoOCIvPjxwYXRoIGQ9Ik04IDEyaDgiLz48cGF0aCBkPSJtMTMgMTctNS0xaDFhNCA0IDAgMCAwIDAtOCIvPjwvc3ZnPg=="
@@ -42,9 +43,9 @@ function Navbar() {
                 />
                 <p className="text-white text-xs">Finance</p>
               </Link>
-            </div>
+            </motion.div>
 
-            <div className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
+            <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.05 }} className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
               <Link to="/community" className="flex items-center flex-col gap-1">
                 <img
                   src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMmMyYzIiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tZXNzYWdlLWNpcmNsZS1tb3JlIj48cGF0aCBkPSJNNy45IDIwQTkgOSAwIDEgMCA0IDE2LjFMMiAyMloiLz48cGF0aCBkPSJNOCAxMmguMDEiLz48cGF0aCBkPSJNMTIgMTJoLjAxIi8+PHBhdGggZD0iTTE2IDEyaC4wMSIvPjwvc3ZnPg=="
@@ -53,9 +54,9 @@ function Navbar() {
                 />
                 <p className="text-white text-xs">Community</p>
               </Link>
-            </div>
+            </motion.div>
 
-            <div className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
+            <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.05 }} className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
               <Link to="/about" className="flex items-center flex-col gap-1">
                 <img
                   src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMmMyYzIiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1pbmZvIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xMiAxNnYtNCIvPjxwYXRoIGQ9Ik0xMiA4aC4wMSIvPjwvc3ZnPg=="
@@ -64,20 +65,22 @@ function Navbar() {
                 />
                 <p className="text-white text-xs">About</p>
               </Link>
-            </div>
+            </motion.div>
           </div>
 
 
           <div className="flex items-center gap-8">
-            <img
+            <motion.img
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.1 }}
               src="https://static.vecteezy.com/system/resources/previews/006/487/917/original/man-avatar-icon-free-vector.jpg"
               alt="profile"
-              className="h-10 rounded-full"
+              className="h-10 rounded-full cursor-pointer"
             />
 
-            <button className=" rounded-full px-3 py-2 mr-10 bg-[#67da20] text-black font-semibold">
+            <motion.button initial={{ scale: 1 }} whileHover={{ scale: 1.07 }} className=" rounded-full px-3 py-2 mr-10 bg-[#67da20] text-black font-semibold">
               <Link to="/">Sign Out</Link>
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>

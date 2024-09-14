@@ -1,16 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import { CircleX, Bookmark, Mail, Phone, Twitter, Instagram, Linkedin, Link } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 function PopInfo({ visible, setvisible, currpost }) {
 
     const [bookmark, setbookmark] = useState(false)
+    const [isvisible, issetvisible] = useState(false)
 
   return (
     <>
       {visible && (
         <div className="w-screen h-screen fixed top-0 left-0 flex justify-center bg-black bg-opacity-50 px-20">
-          <div className="mt-28 w-[95%] h-[80%] bg-[#f3f3f3] flex justify-around items-center rounded-xl">
+          <motion.div initial={{ opacity: 1, scale: -1 }} animate={{ opacity: 1, scale:[1.2,1] }} transition={{ duration: 0.2 }} className="mt-28 w-[95%] h-[80%] bg-[#f3f3f3] flex justify-around items-center rounded-xl">
             <div className="h-full w-2/3 flex justify-around items-center">
               <div className="w-[95%] h-[95%] border-2 border-slate-500 rounded-xl overflow-hidden bg-white">
                 <img
@@ -19,13 +21,13 @@ function PopInfo({ visible, setvisible, currpost }) {
                   className="w-full h-[30%]"
                 />
                 <div className="w-full h-[30%] -mt-14 relative">
-                  <div className="ml-8 p-4 bg-white relative h-[160px] w-[160px] rounded-full border-2 border-slate-300">
+                  <motion.div initial={{ opacity: 1, scale: 1 }} whileHover={{ opacity: 1, scale: 1.12 }} className="cursor-pointer ml-8 p-4 bg-white relative h-[160px] w-[160px] rounded-full border-2 border-slate-300">
                     <img
                       src={currpost.logo}
                       alt="logo"
                       className="h-full w-full rounded-full"
                     />
-                  </div>
+                  </motion.div>
                   <div className=" absolute left-52 top-16 h-auto">
                     <p className="text-2xl font-bold">{currpost.name}</p>
                     <p className="mt-2">{currpost.content}</p>
@@ -50,14 +52,14 @@ function PopInfo({ visible, setvisible, currpost }) {
                 onClick={() => setvisible(!visible)}
                 className="absolute -right-3 -top-3"
               >
-                <CircleX size={40} fill="white" color="red" className="cursor-pointer" />
+                <CircleX size={40} fill="white" color="red" className="cursor-pointer" onClick={() => issetvisible(!isvisible)} />
               </button>
 
               <div className="h-[94%] w-[95%] flex justify-between items-center flex-col">
                 <div className="w-[95%] h-[60%] flex flex-col border-2 border-slate-500 rounded-xl p-4 mr-5 bg-white">
                   <p className="text-[22px] font-semibold flex justify-between">
                     <p>Contact details</p>
-                    {!bookmark ? <span onClick={() => setbookmark(!bookmark)}><Bookmark size={30} className="cursor-pointer" /></span> : <span onClick={() => setbookmark(!bookmark)}><Bookmark size={30} className="cursor-pointer" fill="#67DA20" /></span>}
+                    {!bookmark ? <motion.span initial={{ scale: 1 }} whileTap={{ scale: [1.2,1] }} transition={{ ease: "easeOut", duration: 0.2 }} onClick={() => setbookmark(!bookmark)}><Bookmark size={30} className="cursor-pointer" /></motion.span> : <motion.span initial={{ scale: 1 }} whileTap={{ scale: [1.2,1] }} transition={{ ease: "easeOut", duration: 0.2 }} onClick={() => setbookmark(!bookmark)}><Bookmark size={30} className="cursor-pointer" fill="#67DA20" /></motion.span>}
                   </p>
 
                   <p className="border-b-2 border-slate-600 mt-2"></p>
@@ -84,8 +86,8 @@ function PopInfo({ visible, setvisible, currpost }) {
                 </div>
               </div>
             </div>
+        </motion.div>
           </div>
-        </div>
       )}
     </>
   );
