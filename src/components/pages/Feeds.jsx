@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import PopInfo from "./PopInfo";
+import { Linkedin } from "lucide-react";
 
 function Feeds() {
   const [posts, setPosts] = useState([
@@ -7,10 +9,18 @@ function Feeds() {
       id: 1,
       logo: "https://d2jnu6hkti1tqv.cloudfront.net/upload/151e7729-1cc5-485a-a29e-49a831fe8538.jpg",
       name: "Amul",
-      content:
-        "Amul is a multinational cooperative society owned by an astounding 3.6 million milk producers in Gujarat.",
+      content: "Amul is a multinational cooperative society owned by an astounding 3.6 million milk producers in Gujarat.",
       location: "Gujarat, India",
       tags: ["Snacks", "Sweets",],
+      banner:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZIkRw-bNYEFOVmFiMSrWaE4QValC2JDWfEg&s",
+      summary:"lored sdfsdf  sd fsf sd fsfsdfsdfdsf sd fsdfsdfsdfsd sdfsdfsdfsd sdfsdfdsfsf sd sdfdsfsdfsdfs sdfsdfsdfsdf sdfsdf Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ullam odio, porro sit voluptatibus repudiandae voluptate quod numquam, culpa harum molestias. Reprehenderit tempore illum non? Odio facere provident at ducimus! lored sdfsdf  sd fsf sd fsfsdfsdfdsf sd fsdfsdfsdfsd sdfsdfsdfsd sdfsdfdsfsf sd sdfdsfsdfsdfs sdfsdfsdfsdf sdfsdf Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ullam odio, porro sit voluptatibus repudiandae voluptate quod numquam, culpa harum molestias. Reprehenderit tempore illum non? Odio facere provident at ducimus! lored sdfsdf  sd fsf sd fsfsdfsdfdsf sd fsdfsdfsdfsd sdfsdfsdfsd sdfsdfdsfsf sd sdfdsfsdfsdfs sdfsdfsdfsdf sdfsdf Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ullam odio, porro sit voluptatibus repudiandae voluptate quod numquam, culpa harum molestias. Reprehenderit tempore illum non? Odio facere provident at ducimus!",
+      email: "pKXK3@example.com",
+      website: "https://www.amul.com/",
+      instagram: "https://www.instagram.com/amul/",
+      twitter: "https://twitter.com/amul",
+      linkedin: "https://www.linkedin.com/company/amul/",
+      team:"18000",
+      estd:"1988",
     },
     {
       id: 2,
@@ -20,6 +30,15 @@ function Feeds() {
         "Lijjat Papad is a cooperative founded by women, producing papads and snacks, empowering rural women across India.",
       location: "Mumbai, India",
       tags: ["Snacks", "food"],
+      banner:"https://www.zifiti.com/images/itemImgOrig/1297/1297_2267462.jpg",
+      summary:"lored sdfsdf  sd fsf sd fsfsdfsdfdsf sd fsdfsdfsdfsd sdfsdfsdfsd sdfsdfdsfsf sd sdfdsfsdfsdfs sdfsdfsdfsdf sdfsdf Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ullam odio, porro sit voluptatibus repudiandae voluptate quod numquam, culpa harum molestias. Reprehenderit tempore illum non? Odio facere provident at ducimus! lored sdfsdf  sd fsf sd fsfsdfsdfdsf sd fsdfsdfsdfsd sdfsdfsdfsd sdfsdfdsfsf sd sdfdsfsdfsdfs sdfsdfsdfsdf sdfsdf Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ullam odio, porro sit voluptatibus repudiandae voluptate quod numquam, culpa harum molestias. Reprehenderit tempore illum non? Odio facere provident at ducimus! lored sdfsdf  sd fsf sd fsfsdfsdfdsf sd fsdfsdfsdfsd sdfsdfsdfsd sdfsdfdsfsf sd sdfdsfsdfsdfs sdfsdfsdfsdf sdfsdf Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ullam odio, porro sit voluptatibus repudiandae voluptate quod numquam, culpa harum molestias. Reprehenderit tempore illum non? Odio facere provident at ducimus!",
+      email: "pKXK3@example.com",
+      website: "www.Lijjatpapad.com",
+      instagram: "https://www.instagram.com/lijjatpapad/",
+      twitter: "https://twitter.com/lijjatpapad",
+      linkedin: "https://www.linkedin.com/company/lijjatpapad/",
+      team:"250",
+      estd:"1990",
     },
     {
       id: 3,
@@ -188,17 +207,20 @@ function Feeds() {
 
   ]);
 
+  const [visible, setvisible] = useState(false)
+  const [currpost, setcurrpost] = useState(null)
+
   return (
     <>
-      <div className="h-screen w-[85%] flex flex-col justify-end fixed right-0 bottom-0">
-        <div className=" h-[87%] w-full flex items-center justify-center">
-          <div className="mt-10 h-[95%] w-[98%] flex justify-center items-center flex-wrap gap-[7%] overflow-auto scroll">
+      <div className="h-screen w-[82%] flex flex-col justify-end fixed right-0 bottom-0">
+        <div className=" h-[83%] w-full flex items-center justify-center border-t-2 border-slate-400">
+          <div className="mt-5 pb-3 h-[95%] w-[98%] flex justify-center items-center flex-wrap gap-[7%] overflow-auto scroll">
             {posts.map((post) => {
               return (
                 <div
                   key={post.id}
                   className="h-[30%] w-[40%] rounded-md flex justify-between items-center bg-[#e1e1e146]  border-[1px] text-black p-2  border-1 border-gray-300 cursor-pointer"
-                >
+                 onClick={() => {setvisible(!visible); setcurrpost(post);}}>
                   <div className="h-full w-[30%] flex justify-center items-center">
                     <img
                       src={post.logo}
@@ -225,9 +247,12 @@ function Feeds() {
                       </p>
                     </p>
                   </div>
+
+
                 </div>
               );
             })}
+            <PopInfo visible={visible} setvisible={setvisible} currpost={currpost} />
           </div>
         </div>
       </div>

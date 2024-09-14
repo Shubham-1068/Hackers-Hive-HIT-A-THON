@@ -24,9 +24,10 @@ function SideNav() {
 
           {/* News feed */}
           <div className="w-full p-2 pl-4 h-[70%] flex flex-col gap-4 justify-center items-center border-gray-500 mt-10">
-            <p className="text-3xl font-bold bg-white py-1 px-[99px] border-b-2 border-gray-400 text-center flex fixed top-20">Trending</p>
+            <p className="text-2xl font-bold bg-white py-[6px] px-[99px] border-b-2 border-gray-400 text-center flex fixed top-20">Trending</p>
             <div className="w-full h-full overflow-y-scroll">
-              <ul className="flex flex-col text-[18px] font-semibold gap-3 cursor-pointer">
+                <marquee direction="up" width="250" height="80%" className="mt-24" behavior="alternate">
+              <ul className="flex flex-col font-semibold gap-3 cursor-pointer text-[16px]">
                 <li className="flex flex-col hover:bg-[#CBCDD1] rounded-lg p-2">
                   <span>Tech Giants Surge</span>
                   <span className="text-gray-500 text-sm">1 hour ago</span>
@@ -108,6 +109,7 @@ function SideNav() {
                   <span className="text-gray-500 text-sm">20 hours ago</span>
                 </li>
               </ul>
+                </marquee>
             </div>
           </div>
 
