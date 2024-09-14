@@ -50,7 +50,6 @@ function App() {
         <>
           <div className="w-screen h-screen bg-[#ffff]">
             <Navbar />
-            {/* <SideNav /> */}
             <About />
           </div>
         </>
