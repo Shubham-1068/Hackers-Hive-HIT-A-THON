@@ -23,9 +23,10 @@ function SideNav() {
 
 
           {/* News feed */}
-          <div className="w-full p-2 pl-4 h-[70%] flex flex-col gap-4 justify-center items-center border-gray-500 mt-10">
-            <p className="text-2xl font-bold bg-white py-[6px] px-[99px] border-b-2 border-gray-400 text-center flex fixed top-20">Trending</p>
-            <div className="w-full h-full overflow-y-scroll">
+          <div className="w-full p-2 pl-4 h-[70%] flex flex-col gap-4 justify-center items-center border-gray-500 mt-10 overflow-x-hidden">
+            <p className="text-2xl font-bold py-[6px] px-[99px]text-center flex fixed top-20">Trending</p>
+            <div className="border-b-2 w-full h-1 border-slate-400 mt-[75px] mr-2"></div>
+            <div className="w-full h-full ovrflow-x-hidden -mt-24">
                 <marquee direction="up" width="250" height="80%" className="mt-24" behavior="alternate">
               <ul className="flex flex-col font-semibold gap-3 cursor-pointer text-[16px]">
                 <li className="flex flex-col hover:bg-[#CBCDD1] rounded-lg p-2">
@@ -113,7 +114,7 @@ function SideNav() {
             </div>
           </div>
 
-          <div className="w-full h-[30%] rounded-md bg-white pt-18 cursor-pointer"> 
+          <div className="w-full h-[30%] rounded-md bg-[#F7F7F7] pt-18 cursor-pointer"> 
             <AdSection ads={adImagesArray} />
           </div>
 

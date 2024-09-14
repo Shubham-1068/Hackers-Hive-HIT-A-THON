@@ -213,8 +213,8 @@ function Feeds() {
   return (
     <>
       <div className="h-screen w-[82%] flex flex-col justify-end fixed right-0 bottom-0">
-        <div className=" h-[83%] w-full flex items-center justify-center border-t-2 border-slate-400">
-          <div className="mt-5 pb-3 h-[95%] w-[98%] flex justify-center items-center flex-wrap gap-[7%] overflow-auto scroll">
+        <div className=" h-[83%] w-full flex items-center justify-center">
+          <div className="-mt-5 pb-3 h-[95%] w-[98%] flex justify-center items-center flex-wrap gap-[7%] overflow-auto scroll">
             {posts.map((post) => {
               return (
                 <div
