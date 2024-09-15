@@ -78,7 +78,7 @@ function Navbar() {
               className="h-10 rounded-full cursor-pointer"
             />
 
-            <motion.button initial={{ scale: 1 }} whileHover={{ scale: 1.07 }} className=" rounded-full px-3 py-2 mr-10 bg-[#67da20] text-black font-semibold">
+            <motion.button initial={{ scale: 1 }} whileHover={{ scale: 1.07 }} className=" rounded-full px-3 py-2 mr-10 bg-[#67da20] text-black font-semibold" onClick={() => {localStorage.setItem('islogged', 'false');}}>
               <Link to="/">Sign Out</Link>
             </motion.button>
           </div>
