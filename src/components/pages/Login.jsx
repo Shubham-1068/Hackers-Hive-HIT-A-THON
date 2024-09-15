@@ -14,7 +14,7 @@ function Login() {
   return (
     <>
       {/* Home page banner */}
-      <div style={style} className="w-[70vw] h-full bg-center mt-10 bg-contain bg-no-repeat fixed">
+      <div style={style} className="w-[70vw] h-full bg-center mt-10 bg-contain bg-no-repeat fixed hidden sm:block">
 
         <div className="text-left ml-20">
           <p className="text-6xl m-4 mt-20 font-bold ">BizAmplify</p>
@@ -52,19 +52,16 @@ function Login() {
       <div
         id="login-popup"
         tabIndex="-1"
-        className="bg-[#F6F6F6] overflow-y-auto overflow-x-hidden fixed top-0 p-14 right-0 z-50 h-full items-center justify-center flex w-[30vw]"
+        className="bg-[#F6F6F6] md:mt-0 top-0 right-0 z-50 h-screen md:fixed fixed flex items-center justify-center p-5 mt-40 sm:p-10 md:p-14 w-full sm:w-[90vw] md:w-[50vw] lg:w-[30vw]"
       >
-        <div className="relative p-4 w-full max-w-md h-full md:h-auto">
+        <div className="relative w-full max-w-md h-full md:h-auto">
           <div className="relative bg-white rounded-lg shadow">
             {/* header */}
 
             <div className="p-5">
-              <h3 className="text-2xl mb-0.5 font-medium"></h3>
-              <p className="mb-4 text-sm font-normal text-gray-800"></p>
-
               <div className="text-center">
                 <p className="mb-3 text-2xl font-semibold leading-5 text-slate-900">
-                  Login to your account
+                  Login
                 </p>
               </div>
 
@@ -148,6 +145,7 @@ function Login() {
           </div>
         </div>
       </div>
+
     </>
   );
 }

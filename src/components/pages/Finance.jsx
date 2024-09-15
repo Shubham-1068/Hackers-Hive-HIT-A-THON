@@ -24,7 +24,7 @@ export default function Finance() {
       category: "food",
       phone: "555-1234",
       address: "123 Main St, Anytown USA",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1524045570440-e451d9d8183b?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       website: "#",
     },
     {
@@ -36,7 +36,7 @@ export default function Finance() {
       category: "retail",
       phone: "555-5678",
       address: "456 Oak Rd, Anytown USA",
-      image: "/placeholder.svg",
+      image: "https://plus.unsplash.com/premium_photo-1686878940830-9031355ec98c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       website: "#",
     },
     {
@@ -48,7 +48,7 @@ export default function Finance() {
       category: "services",
       phone: "555-9012",
       address: "789 Elm St, Anytown USA",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1451933335233-c41672c8f378?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       website: "#",
     },
     {
@@ -60,7 +60,7 @@ export default function Finance() {
       category: "retail",
       phone: "555-3456",
       address: "321 Oak Ln, Anytown USA",
-      image: "/placeholder.svg",
+      image: "https://plus.unsplash.com/premium_photo-1664300897489-fd98eee64faf?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       website: "#",
     },
     {
@@ -72,7 +72,7 @@ export default function Finance() {
       category: "services",
       phone: "555-7890",
       address: "654 Maple Ave, Anytown USA",
-      image: "/placeholder.svg",
+      image: "https://plus.unsplash.com/premium_photo-1666736570873-36d95bd8ee3f?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       website: "#",
     },
     {
@@ -84,7 +84,7 @@ export default function Finance() {
       category: "food",
       phone: "555-2109",
       address: "987 Pine St, Anytown USA",
-      image: "/placeholder.svg",
+      image: "https://plus.unsplash.com/premium_photo-1664202219877-b32fcd5aa731?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       website: "#",
     },
     {
@@ -96,7 +96,7 @@ export default function Finance() {
       category: "retail",
       phone: "555-6543",
       address: "159 Birch Rd, Anytown USA",
-      image: "/placeholder.svg",
+      image: "https://plus.unsplash.com/premium_photo-1674273913197-0070a5638f45?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       website: "#",
     },
     {
@@ -108,7 +108,7 @@ export default function Finance() {
       category: "services",
       phone: "555-8765",
       address: "753 Oak St, Anytown USA",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1492552181161-62217fc3076d?q=80&w=1797&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       website: "#",
     },
   ];
@@ -308,4 +308,77 @@ export default function Finance() {
       </div>
     </>
   );
+      <div className="w-[78%] flex-1 py-10 absolute right-0 top-0">
+        <div className="container px-4 md:px-6 relative">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {randomBusinesses.map((business) => (
+              <div
+                key={business.name}
+                className="group relative overflow-hidden rounded-lg w-full max-w-[300px] border border-[#d1d1d1]"
+              >
+                <a href="#" className="absolute inset-0 z-10">
+                  <span className="sr-only">Visit {business.name}</span>
+                </a>
+                <div className="card-header">
+                  <img
+                    src={business.image}
+                    alt={business.name}
+                    width={300}
+                    height={225}
+                    className="h-48 w-full object-cover transition-all duration-300 group-hover:scale-105"
+                    style={{ aspectRatio: "300/225", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="card-content p-4 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1">
+                      <svg className="w-4 h-4 fill-primary" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                      </svg>
+                      <span className="text-sm font-medium">{business.rating}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <svg className="w-4 h-4 fill-muted-foreground" viewBox="0 0 24 24">
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                      </svg>
+                      <span className="text-sm font-medium">{business.reviews} reviews</span>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold">{business.name}</h3>
+                  <p className="text-sm text-[#272727]">{business.description}</p>
+                  <div className="flex flex-col gap-2 items-start justify-between">
+                    <div className="flex items-center gap-1">
+                      <svg className="w-4 h-4 fill-muted-foreground" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                      </svg>
+                      <span className="text-sm font-medium">{business.phone}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <svg className="w-4 h-4 fill-muted-foreground" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>
+                      <span className="text-sm font-medium">{business.address}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="card-footer absolute bottom-0 w-full">
+                  <button className="w-full rounded-b-lg bg-[#67da20] px-4 py-2 text-sm font-medium text-[#f5f5f5] transition-colors hover:bg-[#5ac31b]">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center items-center mt-16 gap-4 pr-7">
+            <button className="rounded-lg border border-[#67da20] px-4 py-2 text-sm font-medium text-[#67da20] transition-colors hover:bg-[#67da20] hover:text-[#f5f5f5]">
+              Explore More Businesses
+            </button>
+            <button className="rounded-lg bg-[#67da20] px-4 py-2 text-sm font-medium text-[#f5f5f5] transition-colors hover:bg-[#5ac31b]">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }

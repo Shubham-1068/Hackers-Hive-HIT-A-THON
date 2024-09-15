@@ -13,7 +13,7 @@ const RegistrationForm = () => {
     return (
         <>
 
-            <div style={style} className="w-[70vw] h-full bg-center mt-10 bg-contain bg-no-repeat fixed">
+            <div style={style} className="w-[70vw] h-full bg-center mt-10 bg-contain bg-no-repeat fixed hidden md:block">
 
                 <div className="text-left ml-20">
                     <p className="text-6xl m-4 mt-20 font-bold ">BizAmplify</p>
@@ -29,7 +29,9 @@ const RegistrationForm = () => {
                 </div>
             </div>
 
-            <div className=" fixed top-0 px-14 py-8 right-0 z-50 h-screen items-center justify-center flex w-[30vw] bg-gray-100">
+            {/* RegistrationForm */}
+
+            <div className=" fixed top-0 px-14 py-8 right-0 z-50 h-screen items-center justify-center flex md:w-[30vw] bg-gray-100 w-full">
                 <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
                     <h2 className="text-2xl font-semibold text-center mb-6">Create an account</h2>
 
