@@ -26,7 +26,6 @@ function App() {
         <>
           <div className="w-screen h-screen bg-[#ffff]">
             <Navbar />
-            {/* <SideNav /> */}
             <Community />
           </div>
         </>
@@ -38,7 +37,6 @@ function App() {
         <>
           <div className="w-screen h-screen bg-[#ffff]">
             <Navbar />
-            <SideNav />
             <Finance />
           </div>
         </>
