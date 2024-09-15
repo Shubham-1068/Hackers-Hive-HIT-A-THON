@@ -8,6 +8,7 @@ import Finance from "./components/pages/Finance";
 import About from "./components/pages/About";
 import Login from "./components/pages/Login";
 import NotFound from "./components/pages/NotFound";
+import RegistrationForm from "./components/pages/RegistrationForm";
 
 function App() {
   const router = createBrowserRouter([
@@ -64,6 +65,16 @@ function App() {
             <Navbar />
             <SideNav />
             <Feeds />
+          </div>
+        </>
+      ),
+    },
+    {
+      path: "/signup",
+      element: (
+        <>
+          <div className="w-screen h-screen bg-[#ffff]">
+            <RegistrationForm />
           </div>
         </>
       ),
