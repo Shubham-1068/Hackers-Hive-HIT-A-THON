@@ -149,7 +149,7 @@ function Login() {
 
       {/* for small screens */}
 
-      <p className="fixed top-5 w-screen h-32 flex justify-center items-center flex-col z-20 md:hidden">
+      <p className="fixed top-3 w-screen h-32 flex justify-center items-center flex-col z-20 md:hidden">
           <p className="text-[10vw] font-bold">BizAmplify</p>
           <p className="text-slate-600 text-md">Empower your business</p>
       </p>
