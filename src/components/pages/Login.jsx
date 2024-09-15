@@ -8,23 +8,19 @@ import "react-toastify/dist/ReactToastify.css";
 function Login() {
   const style = {
     backgroundImage: `url(${Factory})`,
-  };
+    opacity: 0.9,
+  }
 
   return (
     <>
       {/* Home page banner */}
-      <div
-        style={style}
-        className="w-[70vw] h-full bg-center mt-10 bg-contain bg-no-repeat fixed"
-      >
-        <div className="text-left ml-20 w-[30vw]">
+      <div style={style} className="w-[70vw] h-full bg-center mt-10 bg-contain bg-no-repeat fixed">
+
+        <div className="text-left ml-20">
           <p className="text-6xl m-4 mt-20 font-bold ">BizAmplify</p>
 
-          <p className="text-xl font-normal mt-10">
-            An innovative platform designed to{" "}
-            <b className="text-[#67da20] text-2xl">Empower</b> <b>Micro</b> and{" "}
-            <b>Nano</b> entrepreneurs
-          </p>
+          <p className="text-xl font-normal mt-10">An innovative platform designed to <b className="text-[#67da20] text-2xl">Empower</b>
+            <br /> <b>Micro & Nano Businesses</b></p>
 
           <div className="flex flex-col gap-8 text-xl font-semibold mt-10">
             <p className="flex gap-2">
@@ -129,17 +125,14 @@ function Login() {
                   placeholder="Password"
                 />
                 <p className="mb-3 mt-2 text-sm text-gray-500">
-                  <Link
-                    to="/forgot-password"
-                    className="text-blue-800 hover:text-blue-600"
-                  >
+                  <Link to="/forgot-password" className="text-blue-800 hover:underline hover:text-blue-600">
                     Reset your password?
                   </Link>
                 </p>
                 <Link
                   to="/feeds"
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-black p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400"
+                  className="inline-flex w-full items-center justify-center rounded-lg hover:bg-[#4285f4] bg-black p-2 py-3 text-sm font-medium text-white outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 disabled:bg-gray-400"
                 >
                   Continue
                 </Link>
@@ -147,7 +140,7 @@ function Login() {
 
               <div className="mt-6 text-center text-sm text-slate-600">
                 Don't have an account?
-                <Link to="/signup" className="font-medium text-[#4285f4]">
+                <Link to="/signup" className="font-medium hover:underline text-[#4285f4]">
                   Sign up
                 </Link>
               </div>
