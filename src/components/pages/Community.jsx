@@ -1,237 +1,299 @@
-import React from "react";
-import ChatSidebarItem from "./ChatSidebarItem";
-import ChatMessage from "./ChatMessage";
+import React, { useState } from 'react';
+import { FaSearch, FaPaperclip, FaFileExcel, FaChartLine, FaFilePdf, FaFileContract, FaPaperPlane, FaUser, FaUsers } from 'react-icons/fa';
 
-export default function Community() {
+const Avatar = ({ src, alt, fallback }) => (
+  <div className="w-10 h-10 rounded-full bg-[#67da20] flex items-center justify-center overflow-hidden text-[#272727]">
+    {src ? (
+      <img src={src} alt={alt} className="w-full h-full object-cover" />
+    ) : (
+      <span className="text-lg font-semibold">{fallback}</span>
+    )}
+  </div>
+);
+
+const ChatButton = ({ chat, onClick, isActive }) => (
+  <button
+    className={`w-full text-left mb-2 p-2 rounded-lg flex items-center transition-colors ${
+      isActive ? 'bg-[#67da20] text-[#272727]' : 'hover:bg-[#f7f7f7]'
+    }`}
+    onClick={() => onClick(chat)}
+  >
+    <Avatar src={chat.avatar} alt={chat.name} fallback={chat.name.slice(0, 2)} />
+    <div className="ml-3 overflow-hidden">
+      <div className="font-semibold">{chat.name}</div>
+      <div className="text-sm text-gray-600 truncate">{chat.lastMessage}</div>
+    </div>
+    {chat.unreadCount > 0 && (
+      <span className="ml-auto bg-[#67da20] text-[#272727] text-xs rounded-full w-5 h-5 flex items-center justify-center">
+        {chat.unreadCount}
+      </span>
+    )}
+  </button>
+);
+
+const MessageBubble = ({ message, isCurrentUser }) => (
+  <div className={`flex ${isCurrentUser ? 'justify-end' : 'justify-start'} mb-4`}>
+    <div
+      className={`max-w-[70%] rounded-lg p-3 border ${
+        isCurrentUser 
+          ? 'bg-[#67da20] text-[#272727] border-[#5bc71c]' 
+          : 'bg-[#cfcfcf] text-[#272727] border-[#e0e0e0]'
+      }`}
+    >
+      <p className="mb-1">{message.content}</p>
+      {message.attachment && (
+        <button className="text-sm underline mt-2 flex items-center">
+          <FaPaperclip className="mr-1" />
+          {message.attachment.type === 'spreadsheet'
+            ? 'View Spreadsheet'
+            : message.attachment.type === 'chart'
+            ? 'View Chart'
+            : message.attachment.type === 'pdf'
+            ? 'View PDF'
+            : message.attachment.type === 'contract'
+            ? 'View Contract'
+            : 'Download File'}
+        </button>
+      )}
+      <div className="text-xs opacity-75 mt-1 text-right">{message.timestamp}</div>
+    </div>
+  </div>
+);
+
+const AttachmentButton = ({ icon: Icon, onClick, tooltip }) => (
+  <button
+    className="p-2 text-[#67da20] hover:text-[#272727] focus:outline-none transition-colors"
+    onClick={onClick}
+    title={tooltip}
+  >
+    <Icon />
+  </button>
+);
+
+function Community() {
+    const [activeChat, setActiveChat] = useState(null);
+  const [message, setMessage] = useState('');
+  const [activeTab, setActiveTab] = useState('groups');
+
+  const groups = [
+    {
+      id: 'g1',
+      name: 'Market Analysis',
+      avatar: 'https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726358400&semt=ais_hybrid',
+      lastMessage: 'Q2 earnings report discussion',
+      unreadCount: 2,
+      messages: [
+        { id: 'm1', senderId: 'u2', content: 'The Q2 earnings reports are out. Any initial thoughts on the tech sector performance?', timestamp: '10:30 AM' },
+        { id: 'm2', senderId: 'u1', content: 'Tech sector is outperforming expectations. Cloud services and AI-related companies are showing strong growth.', timestamp: '10:32 AM' },
+        { id: 'm3', senderId: 'u3', content: "I've compiled a summary of the key points for the top 10 tech companies. Take a look:", timestamp: '10:35 AM', attachment: { type: 'spreadsheet', url: '#' } },
+      ]
+    },
+    {
+      id: 'g2',
+      name: 'Investment Strategies',
+      avatar: '',
+      lastMessage: 'New emerging markets opportunity',
+      unreadCount: 0,
+      messages: [
+        { id: 'm4', senderId: 'u3', content: "I've identified a potential opportunity in Southeast Asian fintech markets. The regulatory environment is becoming more favorable.", timestamp: '11:15 AM' },
+        { id: 'm5', senderId: 'u2', content: 'Interesting. What specific subsectors within fintech are you looking at? Payment systems, lending platforms, or something else?', timestamp: '11:17 AM' },
+      ]
+    },
+    {
+      id: 'g3',
+      name: 'Economic Indicators',
+      avatar: '',
+      lastMessage: 'Fed meeting minutes analysis',
+      unreadCount: 1,
+      messages: [
+        { id: 'm6', senderId: 'u1', content: "The Fed minutes are out. Here's my initial analysis on potential interest rate changes:", timestamp: '09:45 AM' },
+        { id: 'm7', senderId: 'u3', content: 'Good insights. How do you think this will impact our current fixed income positions and overall portfolio strategy?', timestamp: '09:50 AM' },
+      ]
+    },
+    {
+      id: 'g4',
+      name: 'Random Group',
+      avatar: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?w=740&t=st=1726407221~exp=1726407821~hmac=4d1e33bf16577e196998e39dcb56b75ab59ff016b14d04eee88f5a42798fa5b5',
+      lastMessage: 'Fed meeting minutes analysis',
+      unreadCount: 1,
+      messages: [
+        { id: 'm6', senderId: 'u1', content: "The Fed minutes are out. Here's my initial analysis on potential interest rate changes:", timestamp: '09:45 AM' },
+        { id: 'm7', senderId: 'u3', content: 'Good insights. How do you think this will impact our current fixed income positions and overall portfolio strategy?', timestamp: '09:50 AM' },
+      ]
+    },
+  ];
+
+  const users = [
+    {
+      id: 'u1',
+      name: 'Sarah Chen, CFA',
+      avatar: '',
+      lastMessage: 'Updated portfolio performance report',
+      unreadCount: 0,
+      isOnline: true,
+      messages: [
+        { id: 'm8', senderId: 'u1', content: "I've finished the Q2 portfolio performance report. Our risk-adjusted returns are beating the benchmark.", timestamp: '2:30 PM' },
+        { id: 'm9', senderId: 'currentUser', content: 'Excellent news. Can you send over the detailed report?', timestamp: '2:35 PM' },
+        { id: 'm10', senderId: 'u1', content: 'Certainly, here is the comprehensive report with sector breakdowns.', timestamp: '2:36 PM', attachment: { type: 'pdf', url: '#' } },
+        { id: 'm11', senderId: 'currentUser', content: "Thank you, Sarah. I'll review it shortly and we can discuss any necessary portfolio adjustments.", timestamp: '2:37 PM' },
+        { id: 'm12', senderId: 'u1', content: 'Sounds good. Let me know if you need any clarifications on the risk metrics or performance attribution.', timestamp: '2:38 PM' },
+      ]
+    },
+    {
+      id: 'u2',
+      name: 'Michael Ross, M&A Specialist',
+      avatar: '',
+      lastMessage: 'Thoughts on the latest tech merger?',
+      unreadCount: 1,
+      isOnline: false,
+      messages: [
+        { id: 'm13', senderId: 'u2', content: 'Have you seen the news about the major tech sector merger? This could reshape the competitive landscape.', timestamp: '3:15 PM' },
+        { id: 'm14', senderId: 'currentUser', content: "Yes, I'm analyzing the potential market impact now. It's a game-changer for the industry.", timestamp: '3:17 PM' },
+        { id: 'm15', senderId: 'u2', content: "I'd be interested in your thoughts on how this might affect our tech holdings and potential arbitrage opportunities.", timestamp: '3:20 PM' },
+        { id: 'm16', senderId: 'currentUser', content: "I'll send over my analysis once it's complete. I'm also looking into the regulatory implications.", timestamp: '3:25 PM' },
+        { id: 'm17', senderId: 'u2', content: 'Great. By the way, here is the merger announcement and initial financial projections:', timestamp: '4:30 PM', attachment: { type: 'pdf', url: '#' } },
+      ]
+    },
+    {
+      id: 'u3',
+      name: 'Emily Watkins, Risk Manager',
+      avatar: '',
+      lastMessage: 'New risk assessment model',
+      unreadCount: 0,
+      isOnline: true,
+      messages: [
+        { id: 'm18', senderId: 'u3', content: "I've developed a new risk assessment model for our high-volatility investments, incorporating recent market turbulence.", timestamp: 'Yesterday' },
+        { id: 'm19', senderId: 'currentUser', content: 'That sounds promising, especially given the current market conditions. Can you share more details?', timestamp: 'Yesterday' },
+        { id: 'm20', senderId: 'u3', content: "Certainly, here's a presentation outlining the model and its backtested results:", timestamp: 'Yesterday', attachment: { type: 'pdf', url: '#' } },
+      ]
+    },
+  ];
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    if (message.trim() && activeChat) {
+      const newMessage = {
+        id: `m${Date.now()}`,
+        senderId: 'currentUser',
+        content: message.trim(),
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+      setActiveChat({
+        ...activeChat,
+        messages: [...activeChat.messages, newMessage],
+        lastMessage: newMessage.content,
+        unreadCount: 0
+      });
+      setMessage('');
+    }
+  };
+
+  const handleAttachment = (type) => {
+    // Placeholder for attachment handling
+    console.log(`Attaching ${type}`);
+  };
+
   return (
     <>
-      <div className="h-[89%] mt-16 w-full flex flex-col justify-end fixed right-0 bottom-0 border-t-[1px] border-gray-500">
-        <div className="w-full h-full flex">
-
-          {/* left section with search bar */}
-          <div className="w-[25%] h-full bg-[#3b3b3b]">
-            <div className="h-[60px] bg-[#333333] px-2 py-3 flex items-center justify-around relative border-black border-b-[1px]">
-              <input
-                type="text"
-                className="h-9 w-[95%] rounded-full outline-none text-left px-4 py-1"
-                placeholder="Search"
-              />
-              <button className="h-7 w-7 rounded-full flex justify-center items-center absolute right-6 bg-gray-300">
-                <img
-                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNlYXJjaCI+PGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iOCIvPjxwYXRoIGQ9Im0yMSAyMS00LjMtNC4zIi8+PC9zdmc+"
-                  alt="search"
-                  className="h-5 mb-[1px]"
-                />
-              </button>
-            </div>
-
-            <div className="w-full h-full overflow-y-scroll text-white">
-              <ChatSidebarItem
-                displayName="Ritika"
-                message="Hello, what is your bussiness?"
-                displayPicture="./src/assets/undraw_female_avatar.png"
-              />
-              <ChatSidebarItem
-                displayName="Shubham"
-                message="Let's start"
-                displayPicture="./src/assets/undraw_male_avatar.png"
-              />
-              <ChatSidebarItem
-                displayName="Shivani"
-                message="Ok, done"
-                displayPicture="./src/assets/undraw_profile_pic.png"
-              />
-              <div className="bg-[#1e1e1e] border-r-[10px] rounded-md border-[#67da20] hover:border-none">
-                <ChatSidebarItem
-                  displayName="Rajveer"
-                  message="It's good to be here"
-                  displayPicture="./src/assets/undraw_pic_profile.png"
-                />
-              </div>
-              <ChatSidebarItem
-                displayName="Aarav"
-                message="How can we grow our market?"
-                displayPicture="./src/assets/undraw_male_avatar-1.png"
-              />
-              <ChatSidebarItem
-                displayName="Pooja"
-                message="The strategy looks promising!"
-                displayPicture="./src/assets/undraw_profile_pic-1.png"
-              />
-              <ChatSidebarItem
-                displayName="Aditya"
-                message="We should focus on customer feedback."
-                displayPicture="./src/assets/undraw_male_avatar-2.png"
-              />
-              <ChatSidebarItem
-                displayName="Megha"
-                message="Are we ready for the launch?"
-                displayPicture="./src/assets/undraw_female_avatar-2.png"
-              />
-              <ChatSidebarItem
-                displayName="Rohan"
-                message="Let's finalize the partnership."
-                displayPicture="./src/assets/undraw_pic_profile-2.png"
-              />
-              <ChatSidebarItem
-                displayName="Kavya"
-                message="We need to discuss the budget allocation."
-                displayPicture="./src/assets/undraw_female_avatar-3.png"
-              />
-              <ChatSidebarItem
-                displayName="Manish"
-                message="Client feedback is positive, great job!"
-                displayPicture="./src/assets/undraw_male_avatar-2.png"
-              />
-              <ChatSidebarItem
-                displayName="Sneha"
-                message="Let's prepare for the next meeting."
-                displayPicture="./src/assets/undraw_profile_pic-2.png"
-              />
-              <ChatSidebarItem
-                displayName="Isha"
-                message="Can we review the sales report today?"
-                displayPicture="./src/assets/undraw_female_avatar-4.png"
-              />
-              <ChatSidebarItem
-                displayName="Kunal"
-                message="I think we need to revisit our strategy."
-                displayPicture="./src/assets/undraw_male_avatar-2.png"
-              />
-              <ChatSidebarItem
-                displayName="Ayesha"
-                message="Looking forward to the product launch!"
-                displayPicture="./src/assets/undraw_profile_pic.png"
-              />
-              <ChatSidebarItem
-                displayName="Arjun"
-                message="Great collaboration with the new team!"
-                displayPicture="./src/assets/undraw_pic_profile-2.png"
-              />
-              <ChatSidebarItem
-                displayName="Nisha"
-                message="We should analyze the customer feedback."
-                displayPicture="./src/assets/undraw_female_avatar-5.png"
-              />
-            </div>
+    <div className="sticky top-20 h-[89vh] flex w-screen bg-[#f7f7f7] text-[#272727]">
+      <div className="w-1/4 border-r border-[#67da20] bg-white">
+        <div className="p-4">
+          <h2 className="text-2xl font-bold mb-4 text-[#272727]">Financial Community Chat</h2>
+          <div className="relative mb-4">
+            <input
+              type="text"
+              placeholder="Search chats..."
+              className="w-full pl-10 pr-4 py-2 border border-[#67da20] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#67da20]"
+            />
+            <FaSearch className="absolute left-3 top-3 text-[#67da20]" />
           </div>
-
-          {/* right section with chat box */}
-
-          <div className="w-[75%] h-screen bg-white ">
-            {/* top bar */}
-            <div className="h-[60px] w-full border-b border-[#163300] flex items-center p-2 justify-between">
-              <div className="flex items-center">
-                <img
-                  src="./src/assets/undraw_pic_profile.png"
-                  alt="profile_pic"
-                  className="w-[50px] h-[50px] rounded-full bg-gray-300"
-                />
-                <div>
-                  <div className="ml-2 text-[#163300] text-xl font-bold">
-                    Rajveer
-                  </div>
-                  <div className="ml-2 text-[#163300] text-xs font-semibold flex items-center">
-                    Online
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#56f11e"
-                      stroke-width="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-dot"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hover:bg-gray-300 cursor-pointer rounded-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="36"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#474747"
-                  stroke-width="2.25"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-ellipsis-vertical"
-                >
-                  <circle cx="12" cy="12" r="1" />
-                  <circle cx="12" cy="5" r="1" />
-                  <circle cx="12" cy="19" r="1" />
-                </svg>
-              </div>
-
-            </div>
-
-            {/* chat messages */}
-            <div className="mt-3 ">
-              <ChatMessage />
-            </div>
-
-            {/* chat box */}
-            <div className="h-16 w-screen bg-gray-300 text-[#f2f2f2] fixed bottom-0 p-2 flex items-center">
-              <div className="flex gap-2 pr-4 items-center ml-4">
-                <div className="hover:bg-[#9fe870] p-2 rounded-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#4d4d4d"
-                    stroke-width="1.875"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-smile-plus"
-                  >
-                    <path d="M22 11v1a10 10 0 1 1-9-10" />
-                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-                    <line x1="9" x2="9.01" y1="9" y2="9" />
-                    <line x1="15" x2="15.01" y1="9" y2="9" />
-                    <path d="M16 5h6" />
-                    <path d="M19 2v6" />
-                  </svg>
-                </div>
-
-                <div className="hover:bg-[#9fe870] p-2 rounded-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#4d4d4d"
-                    stroke-width="1.875"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-paperclip"
-                  >
-                    <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48" />
-                  </svg>
-                </div>
-              </div>
-
-              <input
-                className="w-[55vw] h-[40px] border-2 border-gray-00 rounded-lg text-slate-800 overflow-y-hidden p-4"
-                placeholder="Type a message"
-              ></input>
-
-              <button className="w-[5%] h-10 bg-[#67e11f] ml-6 hover:bg-[#4b9023] p-2 rounded-lg text-xl items-center flex justify-center font-semibold text-[#163300]">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZW5kLWhvcml6b250YWwiPjxwYXRoIGQ9Ik0zLjcxNCAzLjA0OGEuNDk4LjQ5OCAwIDAgMC0uNjgzLjYyN2wyLjg0MyA3LjYyN2EyIDIgMCAwIDEgMCAxLjM5NmwtMi44NDIgNy42MjdhLjQ5OC40OTggMCAwIDAgLjY4Mi42MjdsMTgtOC41YS41LjUgMCAwIDAgMC0uOTA0eiIvPjxwYXRoIGQ9Ik02IDEyaDE2Ii8+PC9zdmc+" alt="send" />
-              </button>
-            </div>
+          <div className="flex mb-4">
+            <button
+              className={`flex-1 py-2 ${activeTab === 'groups' ? 'bg-[#67da20] text-[#272727]' : 'bg-[#f7f7f7] text-[#272727]'} rounded-l-lg focus:outline-none transition-colors`}
+              onClick={() => setActiveTab('groups')}
+            >
+              <FaUsers className="inline-block mr-2" /> Groups
+            </button>
+            <button
+              className={`flex-1 py-2 ${activeTab === 'direct' ? 'bg-[#67da20] text-[#272727]' : 'bg-[#f7f7f7] text-[#272727]'} rounded-r-lg focus:outline-none transition-colors`}
+              onClick={() => setActiveTab('direct')}
+            >
+              <FaUser className="inline-block mr-2" /> Direct
+            </button>
+          </div>
+          <div className="overflow-y-auto h-[calc(100vh-220px)]">
+            {activeTab === 'groups' && groups.map((group) => (
+              <ChatButton
+                key={group.id}
+                chat={group}
+                onClick={setActiveChat}
+                isActive={activeChat && activeChat.id === group.id}
+              />
+            ))}
+            {activeTab === 'direct' && users.map((user) => (
+              <ChatButton
+                key={user.id}
+                chat={user}
+                onClick={setActiveChat}
+                isActive={activeChat && activeChat.id === user.id}
+              />
+            ))}
           </div>
         </div>
       </div>
+      <div className="flex-1 flex flex-col bg-white">
+        {activeChat ? (
+          <>
+            <div className="p-4 border-b border-[#67da20] flex items-center">
+              <Avatar
+                src={activeChat.avatar}
+                alt={activeChat.name}
+                fallback={activeChat.name.slice(0, 2)}
+              />
+              <h3 className="ml-3 text-lg font-semibold">{activeChat.name}</h3>
+              {'isOnline' in activeChat && (
+                <span
+                  className={`ml-2 w-3 h-3 rounded-full ${
+                    activeChat.isOnline ? 'bg-[#67da20]' : 'bg-gray-300'
+                  }`}
+                ></span>
+              )}
+            </div>
+            <div className="flex-1 overflow-y-auto p-4 bg-[#f7f7f7]">
+              {activeChat.messages.map((msg) => (
+                <MessageBubble
+                  key={msg.id}
+                  message={msg}
+                  isCurrentUser={msg.senderId === 'currentUser'}
+                />
+              ))}
+            </div>
+            <form onSubmit={handleSendMessage} className="p-4 border-t border-[#67da20] flex bg-white">
+              <input
+                type="text"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Type a message..."
+                className="flex-1 p-2 border border-[#67da20] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#67da20]"
+              />
+              <AttachmentButton icon={FaPaperclip} onClick={() => handleAttachment('file')} tooltip="Attach File" />
+              <button
+                type="submit"
+                className="bg-[#67da20] text-[#272727] p-3 w-16 flex justify-center items-center rounded-r-lg hover:bg-[#5bc71c] focus:outline-none focus:ring-2 focus:ring-[#67da20] transition-colors"
+              >
+                <FaPaperPlane />
+              </button>
+            </form>
+          </>
+        ) : (
+          <div className="flex-1 flex items-center justify-center text-[#272727] bg-[#f7f7f7]">
+            Select a chat to start messaging
+          </div>
+        )}
+      </div>
+    </div>
     </>
   );
 }
+
+export default Community
