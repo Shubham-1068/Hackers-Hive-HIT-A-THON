@@ -462,7 +462,7 @@ function Feeds() {
         transition:Bounce
       />
 
-        <div className="absolute top-[90px] right-0 md:hidden h-10 w-screen flex justify-center items-center z-0">
+        <div className="absolute top-[90px] right-0 md:hidden h-10 w-screen flex justify-center items-center z-0 overflow-y-hidden">
           <div className="h-full w-[86%] flex justify-center items-center gap-6 rounded-full bg-[#3b3b3b]">
             <input
               type="text"
@@ -544,7 +544,7 @@ function Feeds() {
                   initial={{ opacity: 1, scale: 1 }}
                   whileHover={{ opacity: 1, scale: 1.07 }}
                   key={post.id}
-                  className="h-[13%] w-[85%] -mb-10 rounded-md flex justify-between items-center bg-[#e1e1e146]  border-[1px] text-black p-2  border-1 border-gray-300 cursor-pointer"
+                  className="h-[15%] w-[85%] -mb-10 rounded-md flex justify-between items-center bg-[#e1e1e146]  border-[1px] text-black p-2  border-1 border-gray-300 cursor-pointer"
                   onClick={() => {
                     setvisible(!visible);
                     setcurrpost(post);
@@ -563,7 +563,7 @@ function Feeds() {
                       {post.name}
                     </p>
                     <p className="h-[19%] w-full text-md absolute mt-[32px]">
-                      <ul className="mt-2 h-full w-full flex gap-2 items-center flex-wrap text-black">
+                      <ul className="mt-1 h-full w-full flex gap-2 items-center flex-wrap text-black">
                         {post.tags.map((tag, index) => (
                           <li
                             key={index}
