@@ -5,6 +5,7 @@ import { Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { SquareChartGantt } from "lucide-react";
 
 function Feeds() {
   const [posts, setPosts] = useState([
@@ -461,9 +462,26 @@ function Feeds() {
         transition:Bounce
       />
 
-      <div className="h-screen w-[82%] flex flex-col justify-end fixed right-0 bottom-0">
+        <div className="absolute top-[90px] right-0 md:hidden h-10 w-screen flex justify-center items-center z-0">
+          <div className="h-full w-[86%] flex justify-center items-center gap-6 rounded-full bg-[#3b3b3b]">
+            <input
+              type="text"
+              className="h-8 w-[80%] rounded-full outline-none text-center"
+              placeholder="Explore businesses"
+            />
+            <button className="h-8 w-8 bg-white border-2 border-slate-100 rounded-full flex justify-center items-center">
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNlYXJjaCI+PGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iOCIvPjxwYXRoIGQ9Im0yMSAyMS00LjMtNC4zIi8+PC9zdmc+"
+                alt="search"
+                className="h-5 mb-[1px]"
+              />
+            </button>
+          </div>
+        </div>
+      <div className="h-screen w-[82%] flex flex-col justify-end fixed right-0 bottom-0 top-4">
+
         <div className=" h-[83%] w-full flex items-center justify-center">
-          <div className="-mt-10 pt-4 pb-3 h-[95%] w-[98%] flex justify-center items-center flex-wrap gap-[7%] overflow-auto scroll relative z-20">
+          <div className="hidden -mt-10 pt-4 pb-3 h-[95%] w-[98%] md:flex justify-center items-center flex-wrap gap-[7%] overflow-auto scroll relative z-20">
             {posts.map((post) => {
               return (
                 <motion.div
@@ -501,6 +519,62 @@ function Feeds() {
                     <p className="text-sm absolute top-[65px]">
                       {post.content}
                     </p>
+                    <p className="absolute bottom-0">
+                      <p className="text-[#67DA20]">
+                        Location: {post.location}
+                      </p>
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+            <PopInfo
+              visible={visible}
+              setvisible={setvisible}
+              currpost={currpost}
+            />
+          </div>
+
+          {/* responsive */}
+
+          <div className="md:hidden absolute right-0 h-screen top-32 pt-4 pb-3 w-screen flex justify-center items-center flex-wrap gap-[7%] overflow-scroll z-20">
+            {posts.map((post) => {
+              return (
+                <motion.div
+                  initial={{ opacity: 1, scale: 1 }}
+                  whileHover={{ opacity: 1, scale: 1.07 }}
+                  key={post.id}
+                  className="h-[13%] w-[85%] -mb-10 rounded-md flex justify-between items-center bg-[#e1e1e146]  border-[1px] text-black p-2  border-1 border-gray-300 cursor-pointer"
+                  onClick={() => {
+                    setvisible(!visible);
+                    setcurrpost(post);
+                  }}
+                >
+                  <div className="h-full w-[30%] flex justify-center items-center">
+                    <img
+                      src={post.logo}
+                      alt="logo"
+                      className="h-[90%] rounded-lg"
+                    />
+                  </div>
+
+                  <div className="h-full w-[70%] pl-5 flex flex-col gap-3 relative">
+                    <p className="md:text-2xl text-xl font-semibold ">
+                      {post.name}
+                    </p>
+                    <p className="h-[19%] w-full text-md absolute mt-[32px]">
+                      <ul className="mt-2 h-full w-full flex gap-2 items-center flex-wrap text-black">
+                        {post.tags.map((tag, index) => (
+                          <li
+                            key={index}
+                            className="bg-[#cbcdd1] rounded-md px-2 text-sm text-center"
+                          >
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
+                    </p>
+
                     <p className="absolute bottom-0">
                       <p className="text-[#67DA20]">
                         Location: {post.location}

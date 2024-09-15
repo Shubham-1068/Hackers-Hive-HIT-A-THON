@@ -19,7 +19,7 @@ const adImagesArray = [
 function SideNav() {
   return (
     <>
-      <div className="h-full w-[18vw] flex flex-col left-0 bottom-0">
+      <div className="hidden h-full md:w-[18vw] md:flex flex-col left-0 bottom-0">
         <div className="border-t-[1px] border-r-[1px] w-full h-full flex flex-col bg-[#F7F7F7] relative border-gray-400">
 
 
