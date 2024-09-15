@@ -52,7 +52,7 @@ function Login() {
       <div
         id="login-popup"
         tabIndex="-1"
-        className="bg-[#F6F6F6] md:mt-0 top-0 right-0 z-50 h-screen md:fixed flex items-center justify-center p-5 mt-40 absolute sm:p-10 md:p-14 w-full sm:w-[90vw] md:w-[50vw] lg:w-[30vw]"
+        className="bg-[#F6F6F6] md:mt-0 top-0 right-0 z-50 h-screen md:fixed fixed flex items-center justify-center p-5 mt-40 sm:p-10 md:p-14 w-full sm:w-[90vw] md:w-[50vw] lg:w-[30vw]"
       >
         <div className="relative w-full max-w-md h-full md:h-auto">
           <div className="relative bg-white rounded-lg shadow">
