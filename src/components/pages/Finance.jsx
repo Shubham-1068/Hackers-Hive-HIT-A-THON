@@ -1,11 +1,6 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/qWhkbi9h0XH
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
-"use client"
-
+import React from "react"
 import { useState } from "react"
+import { Search } from "lucide-react"
 
 export default function Finance() {
   const [filters, setFilters] = useState({
@@ -132,27 +127,29 @@ export default function Finance() {
         <div className="space-y-4">
           <div className="space-y-2 cursor-default">
             <h2 className="text-3xl font-bold tracking-tighter text-[#272727]">Explore Businesses</h2>
-            <p className="text-slate-500 border-b-2 border-slate-500 pb-12">
+            <p className="text-slate-500 border-b-2 border-slate-500 pb-6">
               Discover a curated selection of thriving local businesses in your community.
             </p>
           </div>
-          <div>
+          <div className="relative">
+            <Search size={24} className="absolute top-[8px] left-[10px]"/>
             <input
               type="search"
               placeholder="Search businesses..."
-              className="w-full rounded-lg bg-white px-4 py-2 text-[#272727] focus:outline-none focus:ring-2 focus:ring-[#67da20]"
+              className="w-full rounded-lg bg-white pl-12 py-2 text-[#272727] focus:outline-none focus:ring-2 focus:ring-[#67da20] "
             />
           </div>
-          <div className="space-y-4">
+          <p className="font-semibold w-full text-xl pt-2">Filters :</p>
+          <div className="space-y-6 w-full border-2 p-2 bg-white rounded-lg">
             <div>
-              <label htmlFor="rating" className="block text-sm font-medium text-[#272727]">
+              <label htmlFor="rating" className="block text-md font-medium text-[#272727] pb-2">
                 Rating
               </label>
               <select
                 id="rating"
                 value={filters.rating}
                 onChange={(e) => handleFilterChange("rating", parseFloat(e.target.value))}
-                className="mt-1 block w-full rounded-lg bg-white px-4 py-2 text-[#272727] focus:outline-none focus:ring-2 focus:ring-[#67da20]"
+                className="mt-1 block w-full rounded-lg bg-[#f5f5f5] px-4 py-2 text-[#272727] focus:outline-none focus:ring-2 focus:ring-[#67da20] text-sm"
               >
                 <option value="0">All</option>
                 <option value="4">4 stars and above</option>
@@ -161,14 +158,14 @@ export default function Finance() {
               </select>
             </div>
             <div>
-              <label htmlFor="price" className="block text-sm font-medium text-[#272727]">
+              <label htmlFor="price" className="block text-md font-medium text-[#272727] pb-2">
                 Price
               </label>
               <select
                 id="price"
                 value={filters.price}
                 onChange={(e) => handleFilterChange("price", e.target.value)}
-                className="mt-1 block w-full rounded-lg bg-white px-4 py-2 text-[#272727] focus:outline-none focus:ring-2 focus:ring-[#67da20]"
+                className="mt-1 block w-full rounded-lg bg-[#f5f5f5] px-4 py-2 text-[#272727] focus:outline-none focus:ring-2 focus:ring-[#67da20] text-sm"
               >
                 <option value="all">All</option>
                 <option value="$">Rs 10000 - 50000</option>
@@ -177,14 +174,14 @@ export default function Finance() {
               </select>
             </div>
             <div>
-              <label htmlFor="category" className="block text-sm font-medium text-[#272727]">
+              <label htmlFor="category" className="block text-md font-medium text-[#272727] pb-2">
                 Category
               </label>
               <select
                 id="category"
                 value={filters.category}
                 onChange={(e) => handleFilterChange("category", e.target.value)}
-                className="mt-1 block w-full rounded-lg bg-white px-4 py-2 text-[#272727] focus:outline-none focus:ring-2 focus:ring-[#67da20]"
+                className="mt-1 block w-full rounded-lg bg-[#f5f5f5] px-4 py-2 text-[#272727] focus:outline-none focus:ring-2 focus:ring-[#67da20] text-sm"
               >
                 <option value="all">All</option>
                 <option value="food">Food</option>
