@@ -79,7 +79,7 @@ function Community() {
     {
       id: 'g1',
       name: 'Market Analysis',
-      avatar: 'https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726358400&semt=ais_hybrid',
+      avatar: 'https://img.freepik.com/free-vector/dart-hitting-center-target-3d-icon-arrow-hitting-aim-bullseye-3d-vector-illustration-white-background-goal-success-achievement-marketing-strategy-concept_74855-25962.jpg?w=740&t=st=1726412966~exp=1726413566~hmac=76307e15b3bce8be5011b6d51756b5fb249625ec619af0eb6270f22101f50af3',
       lastMessage: 'Q2 earnings report discussion',
       unreadCount: 2,
       messages: [
@@ -91,7 +91,7 @@ function Community() {
     {
       id: 'g2',
       name: 'Investment Strategies',
-      avatar: '',
+      avatar: 'https://img.freepik.com/premium-photo/3d-save-money-icon-wallet-coins-finance-transfer-concepts_1108314-501068.jpg?w=360',
       lastMessage: 'New emerging markets opportunity',
       unreadCount: 0,
       messages: [
@@ -102,7 +102,7 @@ function Community() {
     {
       id: 'g3',
       name: 'Economic Indicators',
-      avatar: '',
+      avatar: 'https://img.freepik.com/premium-vector/bitcoin-cartoonstyle-vector-illustration_761413-4222.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
       lastMessage: 'Fed meeting minutes analysis',
       unreadCount: 1,
       messages: [
@@ -127,7 +127,7 @@ function Community() {
     {
       id: 'u1',
       name: 'Sarah Chen, CFA',
-      avatar: '',
+      avatar: 'https://img.freepik.com/premium-photo/man-with-glasses-backpack-that-says-hes-character_113255-102990.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
       lastMessage: 'Updated portfolio performance report',
       unreadCount: 0,
       isOnline: true,
@@ -142,7 +142,7 @@ function Community() {
     {
       id: 'u2',
       name: 'Michael Ross, M&A Specialist',
-      avatar: '',
+      avatar: 'https://img.freepik.com/premium-photo/3d-rendering-avatar-design_1258715-60985.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
       lastMessage: 'Thoughts on the latest tech merger?',
       unreadCount: 1,
       isOnline: false,
@@ -157,7 +157,7 @@ function Community() {
     {
       id: 'u3',
       name: 'Emily Watkins, Risk Manager',
-      avatar: '',
+      avatar: 'https://img.freepik.com/premium-photo/3d-rendering-cute-cartoon-girl-with-glasses-isolated-white-background_1308157-8781.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
       lastMessage: 'New risk assessment model',
       unreadCount: 0,
       isOnline: true,
@@ -167,6 +167,132 @@ function Community() {
         { id: 'm20', senderId: 'u3', content: "Certainly, here's a presentation outlining the model and its backtested results:", timestamp: 'Yesterday', attachment: { type: 'pdf', url: '#' } },
       ]
     },
+    {
+      id: 'u4',
+      name: 'John Carter, HR Coordinator',
+      avatar: 'https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-92112.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'New HR policy updates ready for review.',
+      unreadCount: 0,
+      isOnline: false,
+      messages: [
+        { id: 'm22', senderId: 'u4', content: 'Please review the updated HR policies and provide your feedback.', timestamp: '1:00 PM' },
+        { id: 'm23', senderId: 'currentUser', content: 'Thanks, I\'ll look into these and get back to you by Friday.', timestamp: '2:15 PM' }
+      ]
+    },
+    {
+      id: 'u5',
+      name: 'Alice Johnson, Marketing Director',
+      avatar: 'https://img.freepik.com/premium-photo/lego-figure-man-wearing-glasses-scarf-with-yellow-scarf_1221953-48187.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'Marketing campaign results exceeded expectations!',
+      unreadCount: 3,
+      isOnline: true,
+      messages: [
+        { id: 'm24', senderId: 'u5', content: 'The latest campaign has been a tremendous success, generating a 50% increase in leads.', timestamp: '3:30 PM' },
+        { id: 'm25', senderId: 'currentUser', content: 'That\'s fantastic news! Any insights on what worked best?', timestamp: '3:45 PM' }
+      ]
+    },
+    {
+      id: 'u6',
+      name: 'Oliver Smith, IT Security Chief',
+      avatar: 'https://img.freepik.com/premium-photo/3d-man-icon-person-gender-logo-illustration_762678-32616.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'Urgent: Security breach detected in our network!',
+      unreadCount: 1,
+      isOnline: false,
+      messages: [
+        { id: 'm26', senderId: 'u6', content: 'We detected a potential security threat on our network. Immediate action required.', timestamp: '9:15 AM' },
+        { id: 'm27', senderId: 'currentUser', content: 'I\'m on it. Let\'s meet ASAP to address this.', timestamp: '9:20 AM' }
+      ]
+    },
+    {
+      id: 'u7',
+      name: 'Emma Green, Financial Analyst',
+      avatar: 'https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-96091.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'Quarterly financial review meeting?',
+      unreadCount: 0,
+      isOnline: true,
+      messages: [
+        { id: 'm28', senderId: 'u7', content: 'Can we schedule the financial review for next quarter early next week?', timestamp: '11:30 AM' },
+        { id: 'm29', senderId: 'currentUser', content: 'Sure, how does Monday look for your schedule?', timestamp: '11:45 AM' }
+      ]
+    },
+    {
+      id: 'u8',
+      name: 'David Chen, Software Architect',
+      avatar: 'https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-103324.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'We need to discuss the microservices architecture.',
+      unreadCount: 1,
+      isOnline: false,
+      messages: [
+        { id: 'm30', senderId: 'u8', content: 'I\'ve reviewed the current architecture, and there are some performance bottlenecks.', timestamp: '12:00 PM' },
+        { id: 'm31', senderId: 'currentUser', content: 'I noticed the same. Let’s set up a meeting to go over the issues.', timestamp: '12:05 PM' },
+        { id: 'm32', senderId: 'u8', content: 'Great, I\'m free tomorrow afternoon.', timestamp: '12:10 PM' }
+      ]
+    },
+    {
+      id: 'u9',
+      name: 'Jessica Hall, UX Designer',
+      avatar: 'https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-93852.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'User feedback on the latest prototype.',
+      unreadCount: 2,
+      isOnline: true,
+      messages: [
+        { id: 'm33', senderId: 'u9', content: 'I\'ve gathered feedback from the latest user tests. Most users find the interface intuitive.', timestamp: '9:00 AM' },
+        { id: 'm34', senderId: 'currentUser', content: 'That’s good to hear! Were there any common pain points?', timestamp: '9:15 AM' },
+        { id: 'm35', senderId: 'u9', content: 'A few users mentioned issues with navigation speed. I\'ll work on some improvements.', timestamp: '9:30 AM' }
+      ]
+    },
+    {
+      id: 'u10',
+      name: 'Richard Blake, Legal Consultant',
+      avatar: 'https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-92175.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'Legal review of new contract terms.',
+      unreadCount: 0,
+      isOnline: false,
+      messages: [
+        { id: 'm36', senderId: 'u10', content: 'I\'ve completed the review of the new contract. We need to adjust the liability clause.', timestamp: '11:45 AM' },
+        { id: 'm37', senderId: 'currentUser', content: 'Thanks for the heads-up. Let\'s make those changes before signing.', timestamp: '12:00 PM' }
+      ]
+    },
+    {
+      id: 'u11',
+      name: 'Natalie Evans, Business Strategist',
+      avatar: 'https://img.freepik.com/premium-photo/3d-cartoon-avatar-girl-minimal-3d-character_652053-2327.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'Looking forward to the strategy session next week.',
+      unreadCount: 1,
+      isOnline: true,
+      messages: [
+        { id: 'm38', senderId: 'u11', content: 'We should prepare the agenda for the next strategy meeting. Do you have time to discuss?', timestamp: '4:15 PM' },
+        { id: 'm39', senderId: 'currentUser', content: 'Yes, let’s connect tomorrow to finalize it.', timestamp: '4:30 PM' },
+        { id: 'm40', senderId: 'u11', content: 'Perfect. I’ll send over some initial points later today.', timestamp: '4:45 PM' }
+      ]
+    },
+    {
+      id: 'u12',
+      name: 'Tom Rodriguez, Operations Manager',
+      avatar: 'https://img.freepik.com/premium-photo/lego-man-with-glasses-sweater-that-says-hes-wearing-hoodie_113255-92805.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'Inventory update and logistics issue.',
+      unreadCount: 3,
+      isOnline: false,
+      messages: [
+        { id: 'm41', senderId: 'u12', content: 'We’ve encountered a delay in the supply chain. Some deliveries will be postponed.', timestamp: '2:00 PM' },
+        { id: 'm42', senderId: 'currentUser', content: 'Is there a new expected date for arrival?', timestamp: '2:10 PM' },
+        { id: 'm43', senderId: 'u12', content: 'Yes, we’re expecting them by the end of the week.', timestamp: '2:20 PM' }
+      ]
+    },
+    {
+      id: 'u13',
+      name: 'Samantha Lee, Product Manager',
+      avatar: 'https://img.freepik.com/premium-photo/3d-portraits-happy-people-white-background-cartoon-characters-women-girl-vector-illustration_623919-5033.jpg?ga=GA1.1.588360475.1723039730&semt=ais_hybrid',
+      lastMessage: 'Can we reschedule tomorrow\'s product review?',
+      unreadCount: 2,
+      isOnline: true,
+      messages: [
+        { id: 'm18', senderId: 'u3', content: 'The latest feature rollout has been delayed by a week.', timestamp: '10:00 AM' },
+        { id: 'm19', senderId: 'currentUser', content: 'Understood, do we need to adjust the timeline for the beta release?', timestamp: '10:15 AM' },
+        { id: 'm20', senderId: 'u3', content: 'Yes, I suggest pushing it back by at least two weeks.', timestamp: '10:45 AM' },
+        { id: 'm21', senderId: 'currentUser', content: 'Okay, let\'s discuss this further in tomorrow\'s meeting.', timestamp: '11:00 AM' }
+      ]
+    },    
   ];
 
   const handleSendMessage = (e) => {
