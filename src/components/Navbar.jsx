@@ -2,17 +2,23 @@ import React from "react";
 import Logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { SquareChartGantt } from "lucide-react";
+import { useState } from "react";
+import Dropdown from "./pages/Dropdown";
 
 function Navbar() {
+
+  const [pop, setpop] = useState(false)
+
   return (
     <>
       <div className="h-20 w-screen fixed z-10 bg-[#1e1e1ef5]">
         <div className="h-full w-full flex items-center justify-between">
           <Link to="/feeds" className="h-14 ml-4 mt-1">
-            <img src={Logo} alt="logo" className="h-14 ml-4" />
+            <img src={Logo} alt="logo" className="md:h-14 h-12 ml-0" />
           </Link>
 
-          <div className="mr-2 h-12 w-[450px] flex justify-center items-center gap-4 rounded-full bg-[#3b3b3b]" >
+          <div className="hidden mr-2 h-12 w-[450px] md:flex justify-center items-center gap-4 rounded-full bg-[#3b3b3b]" >
             <input type="text" className="h-8 w-96 rounded-full outline-none text-center" placeholder="Explore businesses" />
             <button className="h-8 w-8 bg-white border-2 border-slate-100 rounded-full flex justify-center items-center">
               <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNlYXJjaCI+PGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iOCIvPjxwYXRoIGQ9Im0yMSAyMS00LjMtNC4zIi8+PC9zdmc+" alt="search" className="h-5 mb-[1px]" />
@@ -21,7 +27,7 @@ function Navbar() {
 
 
           {/* navigation */}
-          <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4">
             <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.05 }} className="flex items-center flex-col gap-1 p-2 px-3 rounded-lg hover:bg-[#3b3b3b]">
               <Link to="/feeds" className="flex items-center flex-col gap-1">
                 <img
@@ -67,9 +73,9 @@ function Navbar() {
               </Link>
             </motion.div>
           </div>
+ 
 
-
-          <div className="flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8">
             <motion.img
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.1 }}
@@ -82,6 +88,13 @@ function Navbar() {
               <Link to="/">Sign Out</Link>
             </motion.button>
           </div>
+
+          <div className="inline md:hidden relative right-6" onClick={() => setpop(!pop)}>
+            <SquareChartGantt size={35} color="white" />
+          </div>
+
+          {pop && <Dropdown pop={pop} setpop={setpop} />}
+
         </div>
       </div>
     </>
