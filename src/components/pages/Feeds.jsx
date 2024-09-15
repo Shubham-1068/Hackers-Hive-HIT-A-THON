@@ -544,7 +544,7 @@ function Feeds() {
                   initial={{ opacity: 1, scale: 1 }}
                   whileHover={{ opacity: 1, scale: 1.07 }}
                   key={post.id}
-                  className="h-[15%] w-[85%] -mb-10 rounded-md flex justify-between items-center bg-[#e1e1e146]  border-[1px] text-black p-2  border-1 border-gray-300 cursor-pointer"
+                  className="h-[18%] w-[85%] -mb-10 rounded-md flex justify-between items-center bg-[#e1e1e146]  border-[1px] text-black p-2  border-1 border-gray-300 cursor-pointer"
                   onClick={() => {
                     setvisible(!visible);
                     setcurrpost(post);
@@ -576,7 +576,7 @@ function Feeds() {
                     </p>
 
                     <p className="absolute bottom-0">
-                      <p className="text-[#67DA20]">
+                      <p className="text-[#67DA20] md:text-md text-sm">
                         Location: {post.location}
                       </p>
                     </p>
