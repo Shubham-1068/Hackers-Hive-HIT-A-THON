@@ -214,7 +214,7 @@ export default function Finance() {
 
         <div className="w-screen md:w-[78%] flex-1 py-10 absolute right-0 top-[540px] md:top-0">
           <div className="container px-4 md:px-6 w-full">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-[900px]">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:h-[900px]">
               {randomBusinesses.map((business) => (
                 <div
                   key={business.name}
