@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 function Navbar() {
   return (
     <>
-      <div className="h-20 w-screen fixed  z-10 bg-[#1e1e1ef5]">
+      <div className="h-20 w-screen fixed z-10 bg-[#1e1e1ef5]">
         <div className="h-full w-full flex items-center justify-between">
           <Link to="/feeds" className="h-14 ml-4 mt-1">
             <img src={Logo} alt="logo" className="h-14 ml-4" />
