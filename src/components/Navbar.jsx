@@ -77,9 +77,9 @@ function Navbar() {
 
           <div className="hidden md:flex items-center gap-8">
             <motion.img
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.1 }}
-              src="https://static.vecteezy.com/system/resources/previews/006/487/917/original/man-avatar-icon-free-vector.jpg"
+              initial={{ scale: 1.1 }}
+              whileHover={{ scale: 1.2 }}
+              src="https://img.freepik.com/premium-photo/man-with-glasses-shirt-that-says-hes-character_1103290-90487.jpg?size=626&ext=jpg&ga=GA1.1.588360475.1723039730&semt=ais_hybrid"
               alt="profile"
               className="h-10 rounded-full cursor-pointer"
             />
