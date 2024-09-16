@@ -131,7 +131,7 @@ function PopInfo({ visible, setvisible, currpost }) {
                       className="h-full w-full rounded-full"
                     />
                   </motion.div>
-                  <div className=" absolute left-[174px] top-16 h-auto w-[40%] border-2 border-orange-500">
+                  <div className=" absolute left-[174px] top-16 h-auto w-[40%]">
                     <p className="text-2xl font-bold">{currpost.name}</p>
 
                     <p className="mt-2 font-semibold">
